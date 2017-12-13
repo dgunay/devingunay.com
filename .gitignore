@@ -2,5 +2,6 @@ html/side_projects
 html/cv_site
 *.md
 html/blog/posts/*
+html/blog/tmp
 html/projects
 
