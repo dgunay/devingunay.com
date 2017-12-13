@@ -1,7 +1,8 @@
 html/side_projects
 html/cv_site
 *.md
-html/blog/posts/*
+html/blog/posts/*.md
 html/blog/tmp
+html/blog/*.json
 html/projects
 
