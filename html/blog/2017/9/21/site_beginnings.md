@@ -1,0 +1,11 @@
+## Devin Makes a Website
+
+My website is beginning to finally take shape.
+
+It really shows how much my job is teaching me. My job has me doing extremely little actual web dev of my own, and mostly observing other people's websites. Yet just by doing that for 4-5 months and learning to interact with the web as a Linux server instead of a browser, I've learned enough to throw up a website. This would have probably taken me weeks to learn how to do before, but now getting hosting set up and then throwing Bootstrap onto it took less than a day. The only thing left is content creation, some more blind tinkering with Bootstrap, and a little PHP.
+
+I don't expect it to amount to all that much - mostly, a way I can keep some of the stuff I make on display, and a web development playground. 
+
+I am fully aware that I could have used a static site generator or CMS to run my blog, but as this site is just as much an exercise for me as it is a host for my content, I decided I would just handle the blog myself. Besides, the only thing on the line if it explodes in my face is my pride and whatever BS I'm writing. 
+
+I decided to use [Parsedown](http://parsedown.org/) to format my blog posts, since looking at HTML makes my eyes bleed. 
