@@ -1,8 +1,9 @@
 <?php
 require_once(__DIR__ . '/post_functions.php');
 
-generate_archive_by_timestamp();
-generate_archive_by_year();
+generate_archive_by_folder();
+// generate_archive_by_timestamp();
+// generate_archive_by_year();
 
 
 /**
@@ -46,6 +47,58 @@ function generate_archive_by_year() {
 
   // output the archive as .json
   file_put_contents('/var/www/html/blog/archive.json', json_encode($archive));
+}
+
+/**
+ * TODO: document and finish
+ *
+ * @return void
+ */
+function generate_archive_by_folder() {
+  $archive = array();
+
+  $years = glob(__DIR__ . '/archive/*', GLOB_ONLYDIR);
+  foreach ($years as $year) {
+    $year = basename($year);
+    $archive[$year] = array();
+
+    $months = glob(__DIR__ . '/archive/' . $year . '/*', GLOB_ONLYDIR);
+    foreach ($months as $month) {
+      $month = basename($month);
+      $archive[$year][$month] = array();
+      $days = glob(
+        __DIR__ . '/archive/' . $year . '/' . $month . '/*', 
+        GLOB_ONLYDIR
+      );
+
+      foreach ($days as $day) {
+        $day = basename($day);
+        $archive[$year][$month][$day] = array();
+
+        $posts = glob(
+          __DIR__ . '/archive/' . $year . '/' . $month . '/' . $day . '/*' 
+        );
+        foreach ($posts as $post) {
+          $archive[$year][$month][$day][$post] = get_post_data($post);
+        }
+      }
+    }
+  }
+
+  // sort years descending
+  krsort($archive);
+
+  // sort months
+  foreach ($archive as $year => &$months) {
+    uksort($months, function($a, $b) {
+      $month_a = date_parse($a)['month'];
+      $month_b = date_parse($b)['month'];
+  
+      return $month_a - $month_b;
+    });
+  }
+
+  print_r($archive); exit;
 }
 
 /**

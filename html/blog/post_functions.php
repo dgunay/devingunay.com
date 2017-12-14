@@ -169,7 +169,7 @@ function publish_post(string $path_to_post) {
 	$month = date('m', $mod_time);
 	$day = date('d', $mod_time);
 	
-	$year_path = '/var/www/html/blog/' . $year;
+	$year_path = __DIR__ . '/archive/' . $year;
 	if (!file_exists($year_path)) {
 		mkdir($year_path);
 	}
