@@ -158,3 +158,32 @@ function load_archive() {
 
 	return $archive;
 }
+
+/**
+ * TODO: document
+ */
+function publish_post(string $path_to_post) {
+	$mod_time = filemtime($path_to_post);
+	
+	$year = date('Y', $mod_time);
+	$month = date('m', $mod_time);
+	$day = date('d', $mod_time);
+	
+	$year_path = '/var/www/html/blog/' . $year;
+	if (!file_exists($year_path)) {
+		mkdir($year_path);
+	}
+
+	if (!file_exists($year_path . '/' . $month)) {
+		mkdir($year_path . '/' . $month);
+	}	
+
+	if (!file_exists($year_path . '/' . $month . '/' . $day)) {
+		mkdir($year_path . '/' . $month . '/' . $day);
+	}
+
+	// TODO: check the return value
+	$destination = $year_path . '/' . $month . '/' . $day . '/' . basename($path_to_post);
+	copy($path_to_post, $destination);
+	touch($destination, $mod_time);
+}

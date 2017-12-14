@@ -7,11 +7,9 @@ if (count($argv) < 2) {
 }
 
 $files = array_slice($argv, 1);
-print_r($files); exit;
-foreach($argv[1] as $file) {
-	echo $file . PHP_EOL;
+foreach($files as $file) {
 	if (preg_match('/.+\.md$/', $file)) {
-		// publish_post($file);
-		echo $file;
+		echo 'Publishing ' . $file . PHP_EOL;
+		publish_post($file);
 	}
 }
