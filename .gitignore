@@ -5,4 +5,4 @@ html/blog/posts/*.md
 html/blog/tmp
 html/blog/*.json
 html/projects
-
+sitemap.xml
