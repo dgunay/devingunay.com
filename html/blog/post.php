@@ -1,10 +1,13 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+	
 	if (!isset($_GET['t']) || !is_numeric($_GET['t'])) {
 		header('Location: http://devingunay.com/blog');
 	}
+
+	require_once(__DIR__ . '/config/config.php');
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +38,7 @@ error_reporting(E_ALL);
 
 <body>
 	<?php
-		include('/var/www/html/menu.php');
+		include($GLOBALS['site_root'] . '/menu.php');
 	?>
 
 	<!-- Top row -->
@@ -62,8 +65,9 @@ error_reporting(E_ALL);
 					<p>
 					<?php
 						if (isset($_GET['t'])) {
-							require_once('/var/www/Parsedown.php');
-							require_once(__DIR__ . '/post_functions.php');
+							require_once($GLOBALS['parsedown_path']);
+							require_once(__DIR__ . '/src/post_functions.php');
+
 							$archive = load_archive();
 							if (isset($archive[$_GET['t']])) {
 								$post = $archive[$_GET['t']];
@@ -145,7 +149,7 @@ error_reporting(E_ALL);
 			<!-- Side bar -->
 			<div class="col-sm-3">
 				<?php
-					include('/var/www/html/blog/side_bar.php');
+					include($GLOBALS['blog_root'] . '/side_bar.php');
 				?>
 			</div>
 		</div>
@@ -160,7 +164,7 @@ error_reporting(E_ALL);
 	</div>
 
 	<?php
-		include('/var/www/html/footer.php');
+		include($GLOBALS['site_root'] . '/footer.php');
 	?>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 		crossorigin="anonymous"></script>

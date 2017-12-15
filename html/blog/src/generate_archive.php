@@ -1,9 +1,11 @@
 <?php
+
+require_once(__DIR__ . '/../config/config.php');
 require_once(__DIR__ . '/post_functions.php');
 
-generate_archive_by_folder();
-// generate_archive_by_timestamp();
-// generate_archive_by_year();
+// generate_archive_by_folder();
+generate_archive_by_timestamp();
+generate_archive_by_year();
 
 
 /**
@@ -13,7 +15,7 @@ generate_archive_by_folder();
  * @author Devin Gunay <devingunay@gmail.com>
  */
 function generate_archive_by_year() {
-  $all_posts = glob('/var/www/html/blog/posts/*.md');
+  $all_posts = glob($GLOBALS['blog_root'] . '/posts/*.md');
   
   $archive = array();
   
@@ -46,7 +48,7 @@ function generate_archive_by_year() {
   }
 
   // output the archive as .json
-  file_put_contents('/var/www/html/blog/archive.json', json_encode($archive));
+  file_put_contents($GLOBALS['blog_root'] . '/archive.json', json_encode($archive));
 }
 
 /**
@@ -107,7 +109,7 @@ function generate_archive_by_folder() {
  * @return void
  */
 function generate_archive_by_timestamp() {
-  $all_posts = glob('/var/www/html/blog/posts/*.md');
+  $all_posts = glob($GLOBALS['blog_root'] . '/posts/*.md');
   
   $archive = array();
   foreach ($all_posts as $path_to_post) {    
@@ -122,7 +124,7 @@ function generate_archive_by_timestamp() {
 
   // output the archive as .json
   file_put_contents(
-    '/var/www/html/blog/timestamp_archive.json', 
+    $GLOBALS['blog_root'] . '/timestamp_archive.json', 
     json_encode($archive)
   );
 }

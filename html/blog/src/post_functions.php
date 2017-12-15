@@ -1,10 +1,10 @@
 <?php
+require_once(__DIR__ . '/../config/config.php');
+
 /**
  * Functions for retrieving blog posts in a variety of ways.
  * 
- * TODO: generalize with a config
  * TODO: refactor into an object that can persist the archive
- * 
  * 
  * @author Devin Gunay <devingunay@gmail.com>
  */
@@ -169,7 +169,7 @@ function publish_post(string $path_to_post) {
 	$month = date('m', $mod_time);
 	$day = date('d', $mod_time);
 	
-	$year_path = __DIR__ . '/archive/' . $year;
+	$year_path = $GLOBALS['blog_root'] . '/archive/' . $year;
 	if (!file_exists($year_path)) {
 		mkdir($year_path);
 	}
