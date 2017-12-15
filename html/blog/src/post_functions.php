@@ -148,7 +148,7 @@ function get_post_data(string $path) {
  */
 function load_archive() {
 	$archive = json_decode(
-		file_get_contents('/var/www/html/blog/timestamp_archive.json'), 
+		file_get_contents($GLOBALS['blog_root'] . '/timestamp_archive.json'), 
 		true
 	);
 

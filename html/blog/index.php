@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+<?php
+	ini_set('display_errors', 1);
+	require_once(__DIR__ . '/config/config.php');
+?>
 <head>
 	<!-- required meta tags -->
 	<meta charset="utf-8">
@@ -27,7 +31,7 @@
 
 <body>
 	<?php
-			include('/var/www/html/menu.php');
+		include($GLOBALS['site_root'] . '/menu.php');
 	?>
 
 	<!-- Top row -->
@@ -41,8 +45,9 @@
 			<!-- Content -->
 			<div class="col-sm-8">
 				<?php
-					require_once('/var/www/Parsedown.php');
-					require_once('/var/www/html/blog/post_functions.php');
+					require_once($GLOBALS['parsedown_path']);
+					require_once(__DIR__ . '/src/post_functions.php');
+
 					$most_recent_posts = most_recent_posts();
 					$i = 0;
 					$len = count($most_recent_posts);
@@ -96,14 +101,14 @@
 			<!-- Side bar -->
 			<div class="col-sm-3">
 				<?php
-					include('/var/www/html/blog/side_bar.php');
+					include($GLOBALS['blog_root'] . '/side_bar.php');
 				?>
 			</div>
 		</div>
 	</div>
 
 	<?php
-		include('/var/www/html/footer.php');
+		include($GLOBALS['site_root'] . '/footer.php');
 	?>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 			crossorigin="anonymous"></script>
