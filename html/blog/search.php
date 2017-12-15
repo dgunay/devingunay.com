@@ -3,7 +3,8 @@
   if (!(isset($_GET['tags']) && is_array($_GET['tags']))) {
     header('Location: http://devingunay.com/blog');    
   }
-  
+	
+	require_once(__DIR__ . '/config/config.php');
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +35,7 @@
 
 <body>
 	<?php
-		include('/var/www/html/menu.php');
+		include($GLOBALS['site_root'] . '/menu.php');
 	?>
 
 	<!-- Top row -->
@@ -48,7 +49,7 @@
 			<!-- Content -->
 			<div class="col-sm-8">
         <?php
-          require_once('/var/www/html/blog/post_functions.php');
+          require_once($GLOBALS['blog_root'] . '/src/post_functions.php');
 
           try {
             $returned_posts = get_posts_by_tags($_GET['tags']);
@@ -75,14 +76,14 @@
 			<!-- Side bar -->
 			<div class="col-sm-3">
 				<?php
-						include('/var/www/html/blog/side_bar.php');
+						include($GLOBALS['blog_root'] . '/side_bar.php');
 				?>
 			</div>
 		</div>
 	</div>
 
 	<?php
-			include('/var/www/html/footer.php');
+			include($GLOBALS['site_root'] . '/footer.php');
 	?>
 			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 					crossorigin="anonymous"></script>

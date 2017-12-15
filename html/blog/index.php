@@ -53,51 +53,16 @@
 					$len = count($most_recent_posts);
 					$pd = new Parsedown(); 
 					foreach ($most_recent_posts as $timestamp => $metadata) {
-						?> 
+						echo render_post($metadata['path']);
 
-						<!-- Date of post -->
-						<p class="text-muted">
-						<?php
-							echo date("m/d/Y - g:i a", $metadata['last_modified']);
-						?>
-						</p>
-
-						<!-- Post tags -->
-						<?php
-						echo "<p>";
-						foreach ($metadata['tags'] as $tag) {
-							echo'<a ' 
-								. 'class="rounded text-white bg-secondary" '
-								. 'href="/blog/search.php?tags[]=' . str_replace('#', '', $tag) . '" '
-								. 'style="text-decoration:none;"'
-								. '>'
-								. $tag
-								. '</a> ';
-							}
-							echo '</p>' . PHP_EOL;
-						?>
-
-
-						<!-- Post content -->
-						<div class="blog-post">
-						<?php
-							$html = $pd->text(file_get_contents($metadata['path']));
-							$html = preg_replace('/<blockquote>/', '<blockquote class="blockquote">', $html);
-							echo $html;
-						?>
-						</div>
-
-						<!-- Dividing line -->
-						<?php
 						if ($i < $len - 1) {
-							?>
-							<hr>
-							<?php
+							echo '<hr>';
 						}
 						$i++;
 					}
 				?>
 			</div>
+			
 			<!-- Side bar -->
 			<div class="col-sm-3">
 				<?php

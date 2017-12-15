@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__ . '/../config/config.php');
+require_once($GLOBALS['parsedown_path']);
 
 /**
  * Functions for retrieving blog posts in a variety of ways.
@@ -186,4 +187,40 @@ function publish_post(string $path_to_post) {
 	$destination = $year_path . '/' . $month . '/' . $day . '/' . basename($path_to_post);
 	copy($path_to_post, $destination);
 	touch($destination, $mod_time);
+}
+
+function render_post(string $path_to_post) : string {
+	$post = get_post_data($path_to_post);
+
+	$html = '<div class="blog-post">'
+		. '<p class="text-muted">'
+		. date("m/d/Y - g:i a", $post['last_modified'])
+		. '</p>'
+		. '<p>';
+
+	// echo post tags with links to search
+	$html .= "<p>";
+	foreach ($post['tags'] as $tag) {
+		$html .= '<a ' 
+			. 'class="rounded text-white bg-secondary" '
+			. 'href="/blog/search.php?tags[]=' . str_replace('#', '', $tag) . '" '
+			. 'style="text-decoration:none;"'
+			. '>'
+			. $tag
+			. '</a> ';
+	}
+	$html .= '</p>' . PHP_EOL;
+
+	// parse post Markdown to HTML
+	$pd = new Parsedown(); 
+	$html .= $pd->text(file_get_contents($path_to_post));
+
+	// extra styling
+	$html = preg_replace(
+		'/<blockquote>/', 
+		'<blockquote class="blockquote">', 
+		$html
+	);
+
+	return $html . '</p></div>';
 }

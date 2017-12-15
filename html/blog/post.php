@@ -53,16 +53,7 @@
 		<div class="row">
 			<!-- Blog Post -->
 			<div class="col-sm-8">
-				<div class="blog-post">
-					<p class="text-muted">
-					<?php
-					// unix to datetime
-					if (isset($_GET['t'])) {
-						echo date("m/d/Y - g:i a", $_GET['t']);
-					}
-					?>
-					</p>
-					<p>
+				<!-- <div class="blog-post"> -->
 					<?php
 						if (isset($_GET['t'])) {
 							require_once($GLOBALS['parsedown_path']);
@@ -72,32 +63,7 @@
 							if (isset($archive[$_GET['t']])) {
 								$post = $archive[$_GET['t']];
 
-								// echo post tags with links to search
-								echo "<p>";
-								foreach ($post['tags'] as $tag) {
-									echo '<a ' 
-										. 'class="rounded text-white bg-secondary" '
-										. 'href="/blog/search.php?tags[]=' . str_replace('#', '', $tag) . '" '
-										. 'style="text-decoration:none;"'
-										. '>'
-										. $tag
-										. '</a> ';
-								}
-								echo '</p>' . PHP_EOL;
-
-								// parse post Markdown to HTML
-								$pd = new Parsedown(); 
-								$html = $pd->text(file_get_contents($archive[$_GET['t']]['path']));
-
-								// extra styling
-								$html = preg_replace(
-									'/<blockquote>/', 
-									'<blockquote class="blockquote">', 
-									$html
-								);
-
-								// output
-								echo $html;					
+								echo render_post($post['path']);
 								
 								// grab for later use
 								// prev / next page
@@ -127,12 +93,13 @@
 								);
 
 								if (!empty($posts_close_to_time)) {
-
+									// TODO: put this in another file
 									?>
 									<p>Were you perhaps looking for posts at these times?:</p>
 									<ul>
 									<?php
 									foreach ($posts_close_to_time as $post) {
+										// TODO: use generate_link_to_post()
 										echo '<li><a href="/blog/post.php?t=' . $post['last_modified'] . '">'
 											. date("m-d-Y - g:i a", $post['last_modified'])
 											. '</a></li>' . PHP_EOL;
@@ -144,7 +111,6 @@
 					?>
 					</p>
 					<hr>
-				</div>
 			</div>
 			<!-- Side bar -->
 			<div class="col-sm-3">
