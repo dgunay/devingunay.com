@@ -1,5 +1,6 @@
 <?php
 require_once(__DIR__ . '/../config/config.php');
+require_once(__DIR__ . '/generate_archive.php');
 require_once($GLOBALS['parsedown_path']);
 
 /**
@@ -31,19 +32,9 @@ function generate_link_to_post(array $post, string $text = null) {
  * times.
  */
 function most_recent_posts($max = 5) {
-	// chdir('/var/www/html/blog/posts');
-	// $all_files = glob('*.md');
-
-	$archive = load_archive();
+	$archive = get_archive_chronological();
 	
-	$most_recent_posts = array();
-	foreach ($archive as $timestamp => $post) {
-		$most_recent_posts[$timestamp] = $post;
-
-		if (count($most_recent_posts) >= $max) {
-			break;
-		}
-	}
+	$most_recent_posts = array_slice($archive, 0, $max);
 
 	return $most_recent_posts;
 }
@@ -149,7 +140,7 @@ function get_post_data(string $path) {
  */
 function load_archive() {
 	$archive = json_decode(
-		file_get_contents($GLOBALS['blog_root'] . '/timestamp_archive.json'), 
+		file_get_contents($GLOBALS['blog_root'] . '/archive.json'), 
 		true
 	);
 
@@ -160,15 +151,40 @@ function load_archive() {
 	return $archive;
 }
 
+
 /**
  * TODO: document
  */
-function publish_post(string $path_to_post) {
-	$mod_time = filemtime($path_to_post);
-	
-	$year = date('Y', $mod_time);
-	$month = date('m', $mod_time);
-	$day = date('d', $mod_time);
+function publish_post(string $path_to_post, string $ymd = null) {
+	if ($ymd !== null) {
+		$post_datetime = DateTime::createFromFormat(
+			'Ymd',
+			$ymd, 
+			new DateTimeZone('America/Los_Angeles')
+		);
+
+		if ($post_datetime === false) {
+			echo 'Failed to publish post.';
+			exit;
+		}
+
+		try {
+			$year 	= $post_datetime->format('Y');
+			$month 	= $post_datetime->format('m');
+			$day 		= $post_datetime->format('d');
+		}
+		catch (\Exception $e) {
+			echo 'Failed to publish ' . $path_to_post . ': ' . $e->getMessage() . PHP_EOL;
+			exit;
+		}
+	}
+	else {
+		$mod_time = filemtime($path_to_post);
+		
+		$year 	= date('Y', $mod_time);
+		$month 	= date('m', $mod_time);
+		$day 		= date('d', $mod_time);
+	}
 	
 	$year_path = $GLOBALS['blog_root'] . '/archive/' . $year;
 	if (!file_exists($year_path)) {
@@ -187,6 +203,15 @@ function publish_post(string $path_to_post) {
 	$destination = $year_path . '/' . $month . '/' . $day . '/' . basename($path_to_post);
 	copy($path_to_post, $destination);
 	touch($destination, $mod_time);
+
+	generate_archive_by_folder();
+}
+
+function get_archive_chronological() {
+	return json_decode(
+		file_get_contents($GLOBALS['blog_root'] . '/archive_chronological.json'),
+		true
+	);
 }
 
 function render_post(string $path_to_post) : string {

@@ -3,9 +3,10 @@
 require_once(__DIR__ . '/../config/config.php');
 require_once(__DIR__ . '/post_functions.php');
 
-// generate_archive_by_folder();
-generate_archive_by_timestamp();
-generate_archive_by_year();
+generate_archive_by_folder();
+generate_archive_chronological();
+// generate_archive_by_timestamp();
+// generate_archive_by_year();
 
 
 /**
@@ -59,17 +60,17 @@ function generate_archive_by_year() {
 function generate_archive_by_folder() {
   $archive = array();
 
-  $years = glob(__DIR__ . '/archive/*', GLOB_ONLYDIR);
+  $years = glob($GLOBALS['blog_root'] . '/archive/*', GLOB_ONLYDIR);
   foreach ($years as $year) {
     $year = basename($year);
     $archive[$year] = array();
 
-    $months = glob(__DIR__ . '/archive/' . $year . '/*', GLOB_ONLYDIR);
+    $months = glob($GLOBALS['blog_root'] . '/archive/' . $year . '/*', GLOB_ONLYDIR);
     foreach ($months as $month) {
       $month = basename($month);
       $archive[$year][$month] = array();
       $days = glob(
-        __DIR__ . '/archive/' . $year . '/' . $month . '/*', 
+        $GLOBALS['blog_root'] . '/archive/' . $year . '/' . $month . '/*', 
         GLOB_ONLYDIR
       );
 
@@ -78,7 +79,7 @@ function generate_archive_by_folder() {
         $archive[$year][$month][$day] = array();
 
         $posts = glob(
-          __DIR__ . '/archive/' . $year . '/' . $month . '/' . $day . '/*' 
+          $GLOBALS['blog_root'] . '/archive/' . $year . '/' . $month . '/' . $day . '/*' 
         );
         foreach ($posts as $post) {
           $archive[$year][$month][$day][$post] = get_post_data($post);
@@ -100,7 +101,10 @@ function generate_archive_by_folder() {
     });
   }
 
-  print_r($archive); exit;
+  file_put_contents(
+    $GLOBALS['blog_root'] . '/archive.json', 
+    json_encode($archive)
+  );
 }
 
 /**
@@ -127,4 +131,32 @@ function generate_archive_by_timestamp() {
     $GLOBALS['blog_root'] . '/timestamp_archive.json', 
     json_encode($archive)
   );
+}
+
+/**
+ * TODO: document
+ *
+ * @return void
+ */
+function generate_archive_chronological() {
+	$archive = load_archive();
+
+	$archive_in_order = array();
+	foreach ($archive as $year) {
+		krsort($year);
+		foreach ($year as $month) {
+			krsort($month);
+			foreach ($month as $day) {
+				foreach ($day as $path => $post) {
+          $archive_in_order[$path] = $post;          
+				}
+			}
+		}
+  }
+  
+	// TODO: return this, put this in gen archive
+	file_put_contents(
+		$GLOBALS['blog_root'] . '/archive_chronological.json',
+		json_encode($archive_in_order)
+	);
 }

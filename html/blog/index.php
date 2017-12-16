@@ -52,8 +52,8 @@
 					$i = 0;
 					$len = count($most_recent_posts);
 					$pd = new Parsedown(); 
-					foreach ($most_recent_posts as $timestamp => $metadata) {
-						echo render_post($metadata['path']);
+					foreach ($most_recent_posts as $path => $post) {
+						echo render_post($path);
 
 						if ($i < $len - 1) {
 							echo '<hr>';
