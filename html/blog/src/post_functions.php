@@ -4,6 +4,7 @@ require_once(__DIR__ . '/generate_archive.php');
 require_once($GLOBALS['parsedown_path']);
 
 /**
+ * 
  * Functions for retrieving blog posts in a variety of ways.
  * 
  * TODO: refactor into an object that can persist the archive
@@ -32,8 +33,8 @@ function generate_link_to_post(array $post, string $text = null) {
  * times.
  */
 function most_recent_posts($max = 5) {
-	$archive = get_archive_chronological();
-	
+	$archive = load_archive();
+
 	$most_recent_posts = array_slice($archive, 0, $max);
 
 	return $most_recent_posts;
@@ -126,6 +127,7 @@ function get_post_data(string $path) {
 	}
 
 	return array(
+		'path'					=> $path,
 		'title'					=> $title,
 		'tags'					=> $tags,
 		'last_modified'	=> filemtime($path),
@@ -155,56 +157,9 @@ function load_archive() {
 /**
  * TODO: document
  */
-function publish_post(string $path_to_post, string $ymd = null) {
-	if ($ymd !== null) {
-		$post_datetime = DateTime::createFromFormat(
-			'Ymd',
-			$ymd, 
-			new DateTimeZone('America/Los_Angeles')
-		);
-
-		if ($post_datetime === false) {
-			echo 'Failed to publish post.';
-			exit;
-		}
-
-		try {
-			$year 	= $post_datetime->format('Y');
-			$month 	= $post_datetime->format('m');
-			$day 		= $post_datetime->format('d');
-		}
-		catch (\Exception $e) {
-			echo 'Failed to publish ' . $path_to_post . ': ' . $e->getMessage() . PHP_EOL;
-			exit;
-		}
-	}
-	else {
-		$mod_time = filemtime($path_to_post);
-		
-		$year 	= date('Y', $mod_time);
-		$month 	= date('m', $mod_time);
-		$day 		= date('d', $mod_time);
-	}
-	
-	$year_path = $GLOBALS['blog_root'] . '/archive/' . $year;
-	if (!file_exists($year_path)) {
-		mkdir($year_path);
-	}
-
-	if (!file_exists($year_path . '/' . $month)) {
-		mkdir($year_path . '/' . $month);
-	}	
-
-	if (!file_exists($year_path . '/' . $month . '/' . $day)) {
-		mkdir($year_path . '/' . $month . '/' . $day);
-	}
-
-	// TODO: check the return value
-	$destination = $year_path . '/' . $month . '/' . $day . '/' . basename($path_to_post);
-	copy($path_to_post, $destination);
-	touch($destination, $mod_time);
-
-	generate_archive_by_folder();
+function publish_post(string $path_to_post, int $time) {	
+	$destination = $GLOBALS['blog_root'] . '/archive/' . $time . '_' . basename($path_to_post);
+	return copy($path_to_post, $destination);
 }
 
 function get_archive_chronological() {
@@ -214,9 +169,7 @@ function get_archive_chronological() {
 	);
 }
 
-function render_post(string $path_to_post) : string {
-	$post = get_post_data($path_to_post);
-
+function render_post(array $post) : string {
 	$html = '<div class="blog-post">'
 		. '<p class="text-muted">'
 		. date("m/d/Y - g:i a", $post['last_modified'])
@@ -238,7 +191,7 @@ function render_post(string $path_to_post) : string {
 
 	// parse post Markdown to HTML
 	$pd = new Parsedown(); 
-	$html .= $pd->text(file_get_contents($path_to_post));
+	$html .= $pd->text(file_get_contents($post['path']));
 
 	// extra styling
 	$html = preg_replace(
@@ -248,4 +201,44 @@ function render_post(string $path_to_post) : string {
 	);
 
 	return $html . '</p></div>';
+}
+
+/**
+ * Collects the paths to all .md files in ./posts into an associative array
+ * with posts filed away by year and month. 
+ * 
+ * @author Devin Gunay <devingunay@gmail.com>
+ */
+function get_archive_by_year() {  
+  $arhive = array();
+  $timestamp_archive = load_archive();
+  foreach ($timestamp_archive as $publish_time => $post) {
+    // construct datetime from Unix timestamp
+    $post_datetime = DateTime::createFromFormat(
+      'U', // unix timestamp
+      $publish_time,
+      new DateTimeZone('America/Los_Angeles')
+    );
+  
+    // use year and month to sort posts into data structure ($archive)
+    $year = $post_datetime->format('Y');
+    $month = $post_datetime->format('m');
+  
+    $archive[$year][$month][] = $post;
+	}
+	  
+  // sort years descending
+  arsort($archive);
+
+  // sort months
+  foreach ($archive as $year => &$months) {
+    uksort($months, function($a, $b) {
+      $month_a = date_parse($a)['month'];
+      $month_b = date_parse($b)['month'];
+  
+      return $month_a - $month_b;
+    });
+  }
+
+  return $archive;
 }

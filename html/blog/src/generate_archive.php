@@ -3,54 +3,12 @@
 require_once(__DIR__ . '/../config/config.php');
 require_once(__DIR__ . '/post_functions.php');
 
-generate_archive_by_folder();
-generate_archive_chronological();
-// generate_archive_by_timestamp();
-// generate_archive_by_year();
+generate_archive();
+// update_archive();
 
 
-/**
- * Collects the paths to all .md files in ./posts into an associative array
- * with posts filed away by year and month. 
- * 
- * @author Devin Gunay <devingunay@gmail.com>
- */
-function generate_archive_by_year() {
-  $all_posts = glob($GLOBALS['blog_root'] . '/posts/*.md');
-  
-  $archive = array();
-  
-  foreach ($all_posts as $path_to_post) {
-    // construct datetime from Unix timestamp
-    $post_datetime = DateTime::createFromFormat(
-      'U', // unix timestamp
-      filemtime($path_to_post),
-      new DateTimeZone('America/Los_Angeles')
-    );
-  
-    // use year and month to sort posts into data structure ($archive)
-    $year = $post_datetime->format('Y');
-    $month = $post_datetime->format('F');
-  
-    $archive[$year][$month][] = get_post_data($path_to_post);
-  }
-  
-  // sort years descending
-  arsort($archive);
 
-  // sort months
-  foreach ($archive as $year => &$months) {
-    uksort($months, function($a, $b) {
-      $month_a = date_parse($a)['month'];
-      $month_b = date_parse($b)['month'];
-  
-      return $month_a - $month_b;
-    });
-  }
 
-  // output the archive as .json
-  file_put_contents($GLOBALS['blog_root'] . '/archive.json', json_encode($archive));
-}
 
 /**
  * TODO: document and finish
@@ -154,9 +112,63 @@ function generate_archive_chronological() {
 		}
   }
   
-	// TODO: return this, put this in gen archive
 	file_put_contents(
 		$GLOBALS['blog_root'] . '/archive_chronological.json',
 		json_encode($archive_in_order)
 	);
+}
+
+function generate_archive(string $folder = null) {
+  $archive = array();
+  $posts = glob($GLOBALS['blog_root'] . '/' . ($folder ?? 'archive') . '/*.md');
+  
+  foreach ($posts as $post) {
+    preg_match('/^\d+/', basename($post), $match);
+    if (isset($match[0])) {
+      $publish_date = $match[0];
+      $archive[$publish_date] = get_post_data($post);
+    }
+    else {
+      throw new Exception('Failed to regex publish date from filename ' . $post);
+    }
+  }
+
+  krsort($archive, SORT_NUMERIC);
+
+  file_put_contents(
+		$GLOBALS['blog_root'] . '/archive.json',
+		json_encode($archive)
+	);
+}
+
+function get_archive() {
+  return json_decode(
+    $GLOBALS['blog_root'] . '/archive.json',
+    true
+  );
+}
+
+function update_archive() {
+  $archive = get_archive();
+
+  $posts = glob($GLOBALS['blog_root'] . '/archive/*.md');
+  foreach ($posts as $post) {
+    // figure out if this post is in the archive, by filename
+    $post_is_already_in_archive = false;
+    foreach ($archive as $old_post) {
+      if (basename($old_post['path']) == basename($post)) {
+        $post_is_already_in_archive = true;
+        break;
+      }
+    }
+
+    // if it's new, make new data for it.
+    if (!$post_is_already_in_archive) {
+      $archive[filemtime($post)] = get_post_data($post);
+    }
+  }
+
+  krsort($archive, SORT_NUMERIC);
+
+  return $archive;
 }

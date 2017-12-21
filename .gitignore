@@ -7,3 +7,4 @@ html/blog/*.json
 html/projects
 sitemap.xml
 config.php
+test.php

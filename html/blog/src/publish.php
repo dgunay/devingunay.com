@@ -7,10 +7,10 @@ if (count($argv) < 2) {
 }
 
 $files = array_slice($argv, 1);
-$date = null;
+$time = time();
 foreach($files as $file) {
 	if (preg_match('/.+\.md$/', $file)) {
 		echo 'Publishing ' . $file . PHP_EOL;
-		publish_post($file, $argv[2] ?? null);
+		publish_post($file, $time++);
 	}
 }

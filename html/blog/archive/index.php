@@ -1,16 +1,20 @@
-<?php
-	$year_and_month_set = isset($_GET['m']) && isset($_GET['y']); 
-	if ($year_and_month_set) {
-		$year_and_month_valid = is_numeric($_GET['m']) && is_numeric($_GET['y']);
-		if (!$year_and_month_valid) { // redirect in case of bullshit
-			header('Location: http://devingunay.com/blog/archive');
-		}
-	}
-?>
-
 <!DOCTYPE html>
 <html>
 
+<?php
+	ini_set('display_errors', 1);
+  require_once(__DIR__ . '/../config/config.php');  
+  require_once($GLOBALS['blog_root'] . '/src/post_functions.php');
+
+  // TODO: just copy the live version back again
+  $display_month_posts = isset($_GET['y']) && isset($_GET['m']);
+  if ($display_month_posts) {
+    // TODO:: filterr ints, non-int redirects
+    if (!filter_var($_GET['y'], FILTER_VAR_INT)) {
+
+    }
+  }
+?>
 <head>
 	<!-- required meta tags -->
 	<meta charset="utf-8">
@@ -37,12 +41,12 @@
 
 <body>
 	<?php
-		include('/var/www/html/menu.php');
+		include($GLOBALS['site_root'] . '/menu.php');
 	?>
 
 	<!-- Top row -->
 	<div class="container" style="margin-bottom: 40px;margin-top: 40px;">
-			<h1 class="display-3">Devin's Blog</h1>
+		<h1 class="display-3">Devin's Blog</h1>
 	</div>
 
 	<!-- Main -->
@@ -50,58 +54,34 @@
 		<div class="row">
 			<!-- Content -->
 			<div class="col-sm-8">
-        <ul>
 				<?php
-					require_once('/var/www/html/blog/post_functions.php');
+          // TODO: display months and years if no y and m set
+          if ($display_month_posts) {
+            $archive = get_archive_by_year();
 
-					$archive = json_decode(
-						file_get_contents('/var/www/html/blog/archive.json'), 
-						true
-					);
-					
-					if ($year_and_month_set) { // Just posts for a certain month
-						$year = $_GET['y'];
-						$month = date("F", mktime(0, 0, 0, $_GET['m'], 10));
-	
-						echo "<h3>{$month} {$year}</h3>";
-						foreach ($archive[$year][$month] as $post) {
-							echo '<li><a href="/blog/post.php?t=' . $post['last_modified'] . '">'
-								. $post['title']
-								. '</a></li>' . PHP_EOL;
-						}
-					}
-					else { // Entire archive
-						echo '<h1>Archive</h1><hr>';
-						foreach($archive as $year => $months) {
-							echo '<h3>' . $year . '</h3>';
-							foreach ($months as $month => $posts) {
-								echo '<h5><a href="/blog/archive?m='.date('m', strtotime($month)).'&y='.$year.'">' 
-								. $month . ' (' . count($archive[$year][$month]) . ')'
-								. '</a></h5>' . PHP_EOL;
-							}
-						}
-					}
-        ?>
-        </ul>
+            echo '<h2>' . $_GET['y'] . '<h2>';
+          }
+				?>
 			</div>
-
+			
 			<!-- Side bar -->
 			<div class="col-sm-3">
-			<?php
-				include('/var/www/html/blog/side_bar.php');
-			?>
+				<?php
+					include($GLOBALS['blog_root'] . '/side_bar.php');
+				?>
+			</div>
 		</div>
 	</div>
 
 	<?php
-		include('/var/www/html/footer.php');
+		include($GLOBALS['site_root'] . '/footer.php');
 	?>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-				crossorigin="anonymous"></script>
+			crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
-				crossorigin="anonymous"></script>
+			crossorigin="anonymous"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
-				crossorigin="anonymous"></script>
+			crossorigin="anonymous"></script>
 </body>
 
 </html>

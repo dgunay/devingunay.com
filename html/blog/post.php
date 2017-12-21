@@ -3,8 +3,18 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 	
-	if (!isset($_GET['t']) || !is_numeric($_GET['t'])) {
-		header('Location: http://devingunay.com/blog');
+	$required_params = array(
+		'y',
+		'm',
+		'd',
+		'h',
+		'min',
+	);
+
+	foreach ($required_params as $param) {
+		if (!isset($_GET[$param]) || !is_numeric($_GET[$param])) {
+			header("Location: http://{$_SERVER['HTTP_HOST']}/blog");
+		}
 	}
 
 	require_once(__DIR__ . '/config/config.php');
@@ -55,59 +65,64 @@
 			<div class="col-sm-8">
 				<!-- <div class="blog-post"> -->
 					<?php
-						if (isset($_GET['t'])) {
-							require_once($GLOBALS['parsedown_path']);
-							require_once(__DIR__ . '/src/post_functions.php');
+						require_once($GLOBALS['parsedown_path']);
+						require_once(__DIR__ . '/src/post_functions.php');
 
-							$archive = load_archive();
-							if (isset($archive[$_GET['t']])) {
-								$post = $archive[$_GET['t']];
+						$post = get_post(
+							$_GET['y'],
+							$_GET['m'],
+							$_GET['d'],
+							$_GET['h'],
+							$_GET['min']
+						);
 
-								echo render_post($post['path']);
-								
-								// grab for later use
-								// prev / next page
-								$archive = array_values($archive);
-								$index_of_post = array_search($post, $archive);
-								if (isset($archive[$index_of_post - 1])) {
-									$next_link = generate_link_to_post(
-										$archive[$index_of_post - 1], 
-										'Next'
-									);
-								}
-								if (isset($archive[$index_of_post + 1])) {
-									$prev_link = generate_link_to_post(
-										$archive[$index_of_post + 1], 
-										'Previous'
-									);
-								}
-							}
-							else {
-								?>
-								<h1>Post Not Found</h1>
-								<p>Sorry, the post you were looking for could not be found.</p>
-								<?php
-								$posts_close_to_time = array_filter($archive, function($timestamp) {
-										return abs($timestamp - $_GET['t']) < 259200;
-									}, ARRAY_FILTER_USE_KEY
+						if ($post) {
+							
+							echo render_post($post['path']);
+									
+							// grab for later use
+							// prev / next page
+							$archive = array_values($archive);
+							$index_of_post = array_search($post, $archive);
+							if (isset($archive[$index_of_post - 1])) {
+								$next_link = generate_link_to_post(
+									$archive[$index_of_post - 1], 
+									'Next'
 								);
-
-								if (!empty($posts_close_to_time)) {
-									// TODO: put this in another file
-									?>
-									<p>Were you perhaps looking for posts at these times?:</p>
-									<ul>
-									<?php
-									foreach ($posts_close_to_time as $post) {
-										// TODO: use generate_link_to_post()
-										echo '<li><a href="/blog/post.php?t=' . $post['last_modified'] . '">'
-											. date("m-d-Y - g:i a", $post['last_modified'])
-											. '</a></li>' . PHP_EOL;
-									}
-									?></ul><?php
-								}
+							}
+							if (isset($archive[$index_of_post + 1])) {
+								$prev_link = generate_link_to_post(
+									$archive[$index_of_post + 1], 
+									'Previous'
+								);
 							}
 						}
+						else {
+							?>
+							<h1>Post Not Found</h1>
+							<p>Sorry, the post you were looking for could not be found.</p>
+							<?php
+							$posts_close_to_time = array_filter($archive, function($timestamp) {
+									return abs($timestamp - $_GET['t']) < 259200;
+								}, ARRAY_FILTER_USE_KEY
+							);
+
+							if (!empty($posts_close_to_time)) {
+								// TODO: put this in another file
+								?>
+								<p>Were you perhaps looking for posts at these times?:</p>
+								<ul>
+								<?php
+								foreach ($posts_close_to_time as $post) {
+									// TODO: use generate_link_to_post()
+									echo '<li><a href="/blog/post.php?t=' . $post['last_modified'] . '">'
+										. date("m-d-Y - g:i a", $post['last_modified'])
+										. '</a></li>' . PHP_EOL;
+								}
+								?></ul><?php
+							}
+						}
+						
 					?>
 					</p>
 					<hr>

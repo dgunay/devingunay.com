@@ -48,12 +48,12 @@
 					require_once($GLOBALS['parsedown_path']);
 					require_once(__DIR__ . '/src/post_functions.php');
 
-					$most_recent_posts = most_recent_posts();
+					$archive = load_archive();
+					$most_recent_posts = array_slice($archive, 0, 5, true);
 					$i = 0;
 					$len = count($most_recent_posts);
-					$pd = new Parsedown(); 
-					foreach ($most_recent_posts as $path => $post) {
-						echo render_post($path);
+					foreach ($most_recent_posts as $publish_date => $post) {
+						echo render_post($post);
 
 						if ($i < $len - 1) {
 							echo '<hr>';
