@@ -6,17 +6,16 @@
   require_once(__DIR__ . '/../config/config.php');  
   require_once($GLOBALS['blog_root'] . '/src/post_functions.php');
 
-	// year is required
-	if (!isset($_GET['y']) || !is_numeric($_GET['y'])) {
-		header("Location: http://{$_SERVER['HTTP_HOST']}/blog");			
-	}
+	$params = array(
+		'y'	=> isset($_GET['y']),
+		'm'	=> isset($_GET['m']),
+	);
 
-	// month optional
-	if (isset($_GET['m']) && !is_numeric($_GET['m']))  {
-		header("Location: http://{$_SERVER['HTTP_HOST']}/blog");	
+	foreach ($params as $param => $isset) {
+		if ($isset && !is_numeric($_GET[$param])) {
+			header("Location: http://{$_SERVER['HTTP_HOST']}/blog");			
+		}
 	}
-
-	$display_month_posts = isset($_GET['m'])
 ?>
 <head>
 	<!-- required meta tags -->
@@ -58,21 +57,32 @@
 			<!-- Content -->
 			<div class="col-sm-8">
 				<?php
-					$year = $_GET['y'];
 					$archive = get_archive_by_year();
 					
-          if ($display_month_posts) {
-						$month = $_GET['m'];
-						$month_text = date("F", mktime(0, 0, 0, $month, 10));
-						
-						echo "<h3>" . $month_text . " {$year}</h3>";
-						foreach ($archive[$year][$month] as $post) {
-							echo '<li><a href="/blog/post.php?t=' . $post['last_modified'] . '">'
-								. $post['title']
-								. '</a></li>' . PHP_EOL;
+					if (isset($_GET['y'])) {
+						$year = $_GET['y'];
+						if (isset($_GET['m'])) { 
+							// display all posts in a month
+							$month = $_GET['m'];
+							$month_text = date("F", mktime(0, 0, 0, $month, 10));
+							
+							echo "<h3>" . $month_text . " {$year}</h3>";
+							foreach ($archive[$year][$month] as $post) {
+								echo '<li><a href="/blog/post.php?t=' . $post['last_modified'] . '">'
+									. $post['title']
+									. '</a></li>' . PHP_EOL;
+							}
 						}
-					}
-					// TODO: make a block for just one year
+						else {
+							// display months in a year with how many posts they have
+							echo '<h3>' . $year . '</h3>';
+							foreach ($archive[$year] as $month => $posts) {
+								echo '<h5><a href="/blog/archive?m=' . $month .'&y=' . $year . '">' 
+									. date("F", mktime(0, 0, 0, $month, 10)) . ' (' . count($archive[$year][$month]) . ')'
+									. '</a></h5>' . PHP_EOL;
+							}
+						}	
+					}					
 					else {
 						// Entire blog
 						echo '<h1>Archive</h1><hr>';
