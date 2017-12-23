@@ -6,14 +6,17 @@
   require_once(__DIR__ . '/../config/config.php');  
   require_once($GLOBALS['blog_root'] . '/src/post_functions.php');
 
-  // TODO: just copy the live version back again
-  $display_month_posts = isset($_GET['y']) && isset($_GET['m']);
-  if ($display_month_posts) {
-    // TODO:: filterr ints, non-int redirects
-    if (!filter_var($_GET['y'], FILTER_VAR_INT)) {
+	// year is required
+	if (!isset($_GET['y']) || !is_numeric($_GET['y'])) {
+		header("Location: http://{$_SERVER['HTTP_HOST']}/blog");			
+	}
 
-    }
-  }
+	// month optional
+	if (isset($_GET['m']) && !is_numeric($_GET['m']))  {
+		header("Location: http://{$_SERVER['HTTP_HOST']}/blog");	
+	}
+
+	$display_month_posts = isset($_GET['m'])
 ?>
 <head>
 	<!-- required meta tags -->
@@ -55,12 +58,33 @@
 			<!-- Content -->
 			<div class="col-sm-8">
 				<?php
-          // TODO: display months and years if no y and m set
+					$year = $_GET['y'];
+					$archive = get_archive_by_year();
+					
           if ($display_month_posts) {
-            $archive = get_archive_by_year();
-
-            echo '<h2>' . $_GET['y'] . '<h2>';
-          }
+						$month = $_GET['m'];
+						$month_text = date("F", mktime(0, 0, 0, $month, 10));
+						
+						echo "<h3>" . $month_text . " {$year}</h3>";
+						foreach ($archive[$year][$month] as $post) {
+							echo '<li><a href="/blog/post.php?t=' . $post['last_modified'] . '">'
+								. $post['title']
+								. '</a></li>' . PHP_EOL;
+						}
+					}
+					// TODO: make a block for just one year
+					else {
+						// Entire blog
+						echo '<h1>Archive</h1><hr>';
+						foreach($archive as $year => $months) {
+							echo '<h3>' . $year . '</h3>';
+							foreach ($months as $month => $posts) {
+								echo '<h5><a href="/blog/archive?m=' . $month .'&y=' . $year . '">' 
+									. date("F", mktime(0, 0, 0, $month, 10)) . ' (' . count($archive[$year][$month]) . ')'
+									. '</a></h5>' . PHP_EOL;
+							}
+						}
+					}
 				?>
 			</div>
 			
