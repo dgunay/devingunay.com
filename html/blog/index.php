@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
 
+<?php
+	ini_set('display_errors', 1);
+	require_once(__DIR__ . '/config/config.php');
+?>
 <head>
 	<!-- required meta tags -->
 	<meta charset="utf-8">
@@ -27,7 +31,7 @@
 
 <body>
 	<?php
-			include('/var/www/html/menu.php');
+		include($GLOBALS['site_root'] . '/menu.php');
 	?>
 
 	<!-- Top row -->
@@ -41,69 +45,35 @@
 			<!-- Content -->
 			<div class="col-sm-8">
 				<?php
-					require_once('/var/www/Parsedown.php');
-					require_once('/var/www/html/blog/post_functions.php');
-					$most_recent_posts = most_recent_posts();
+					require_once($GLOBALS['parsedown_path']);
+					require_once(__DIR__ . '/src/post_functions.php');
+
+					$archive = load_archive();
+					$most_recent_posts = array_slice($archive, 0, 5, true);
 					$i = 0;
 					$len = count($most_recent_posts);
-					$pd = new Parsedown(); 
-					foreach ($most_recent_posts as $timestamp => $metadata) {
-						?> 
+					foreach ($most_recent_posts as $publish_date => $post) {
+						echo render_post($post);
 
-						<!-- Date of post -->
-						<p class="text-muted">
-						<?php
-							echo date("m/d/Y - g:i a", $metadata['last_modified']);
-						?>
-						</p>
-
-						<!-- Post tags -->
-						<?php
-						echo "<p>";
-						foreach ($metadata['tags'] as $tag) {
-							echo'<a ' 
-								. 'class="rounded text-white bg-secondary" '
-								. 'href="/blog/search.php?tags[]=' . str_replace('#', '', $tag) . '" '
-								. 'style="text-decoration:none;"'
-								. '>'
-								. $tag
-								. '</a> ';
-							}
-							echo '</p>' . PHP_EOL;
-						?>
-
-
-						<!-- Post content -->
-						<div class="blog-post">
-						<?php
-							$html = $pd->text(file_get_contents($metadata['path']));
-							$html = preg_replace('/<blockquote>/', '<blockquote class="blockquote">', $html);
-							echo $html;
-						?>
-						</div>
-
-						<!-- Dividing line -->
-						<?php
 						if ($i < $len - 1) {
-							?>
-							<hr>
-							<?php
+							echo '<hr>';
 						}
 						$i++;
 					}
 				?>
 			</div>
+			
 			<!-- Side bar -->
 			<div class="col-sm-3">
 				<?php
-					include('/var/www/html/blog/side_bar.php');
+					include($GLOBALS['blog_root'] . '/side_bar.php');
 				?>
 			</div>
 		</div>
 	</div>
 
 	<?php
-		include('/var/www/html/footer.php');
+		include($GLOBALS['site_root'] . '/footer.php');
 	?>
 		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
 			crossorigin="anonymous"></script>

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 
+<?php
+    require_once('../../config.php');
+?>
 <head>
     <!-- required meta tags -->
     <meta charset="utf-8">
@@ -16,7 +19,7 @@
 
 <body>
     <?php
-        include('../menu.php');
+        include($GLOBALS['site_root'] . '/menu.php');
     ?>
 
     <!-- dynamically create content here -->
@@ -57,7 +60,7 @@
     </div>
 
     <?php
-        include('/var/www/html/footer.php');
+        include($GLOBALS['site_root'] . '/footer.php');
     ?>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

@@ -1,16 +1,19 @@
 <?php
+require_once(__DIR__ . '/../config/config.php');
+require_once(__DIR__ . '/generate_archive.php');
+require_once($GLOBALS['parsedown_path']);
+
 /**
+ * 
  * Functions for retrieving blog posts in a variety of ways.
  * 
- * TODO: generalize with a config
  * TODO: refactor into an object that can persist the archive
- * 
  * 
  * @author Devin Gunay <devingunay@gmail.com>
  */
 
 function generate_link_to_post(array $post, string $text = null) {
-	$link = '<a href="/blog/post.php?t=' . $post['last_modified'] . '">';
+	$link = '<a href="/blog/post.php?t=' . $post['publish_date'] . '">';
 	if ($text === null) {
 		$link .= $post['title'];
 	}
@@ -22,30 +25,6 @@ function generate_link_to_post(array $post, string $text = null) {
 	return $link;
 }
 
-/**
- * Returns the paths to the n most recent blog posts.
- *
- * @param int $max Max number of posts to retrieve.
- * @return array Associative array of file paths keyed to their modification
- * times.
- */
-function most_recent_posts($max = 5) {
-	// chdir('/var/www/html/blog/posts');
-	// $all_files = glob('*.md');
-
-	$archive = load_archive();
-	
-	$most_recent_posts = array();
-	foreach ($archive as $timestamp => $post) {
-		$most_recent_posts[$timestamp] = $post;
-
-		if (count($most_recent_posts) >= $max) {
-			break;
-		}
-	}
-
-	return $most_recent_posts;
-}
 
 /**
  * Gets all posts modified between two Unix timestamps
@@ -111,6 +90,7 @@ function get_posts_by_tags(array $tags) {
  * 	'title' 				=> string, 
  * 	'tags' 					=> string[], 
  * 	'last_modified' => int, 
+ * 	...
  * );
  *
  * @param string $path
@@ -133,10 +113,20 @@ function get_post_data(string $path) {
 		}
 	}
 
+	preg_match('/^\d+/', basename($path), $match);
+	if (isset($match[0])) {
+		$publish_date = $match[0];
+	}
+	else {
+		throw new Exception('Failed to regex publish date from filename ' . $path);
+	}
+
 	return array(
+		'path'					=> $path,
 		'title'					=> $title,
 		'tags'					=> $tags,
 		'last_modified'	=> filemtime($path),
+		'publish_date'	=> $publish_date,
 	);
 }
 
@@ -148,7 +138,7 @@ function get_post_data(string $path) {
  */
 function load_archive() {
 	$archive = json_decode(
-		file_get_contents('/var/www/html/blog/timestamp_archive.json'), 
+		file_get_contents($GLOBALS['blog_root'] . '/archive.json'), 
 		true
 	);
 
@@ -157,4 +147,99 @@ function load_archive() {
 	}
 
 	return $archive;
+}
+
+
+/**
+ * TODO: document
+ */
+function publish_post(string $path_to_post, int $time) {	
+	$destination = $GLOBALS['blog_root'] . '/archive/' . $time . '_' . basename($path_to_post);
+	return copy($path_to_post, $destination);
+}
+
+/**
+ * TODO: document
+ *
+ * @param array $post
+ * @return string
+ */
+function render_post(array $post) : string {
+	$html = '<div class="blog-post">'
+		. '<p class="text-muted">'
+		. date("m/d/Y - g:i a", $post['publish_date'])
+		. '</p>';
+
+	// difference of greather than 1 min
+	if (abs($post['last_modified'] - $post['publish_date']) > 59) {
+		$html .= '<p class="text-muted">'
+		. '<i>Edited: ' . date("m/d/Y - g:i a", $post['last_modified'])
+		. '</i></p>';
+	}
+
+	// echo post tags with links to search
+	$html .= "<p>";
+	foreach ($post['tags'] as $tag) {
+		$html .= '<a ' 
+			. 'class="rounded text-white bg-secondary" '
+			. 'href="/blog/search.php?tags[]=' . str_replace('#', '', $tag) . '" '
+			. 'style="text-decoration:none;"'
+			. '>'
+			. $tag
+			. '</a> ';
+	}
+	$html .= '</p>' . PHP_EOL;
+
+	// parse post Markdown to HTML
+	$pd = new Parsedown(); 
+	$html .= $pd->text(file_get_contents($post['path']));
+
+	// extra styling
+	$html = preg_replace(
+		'/<blockquote>/', 
+		'<blockquote class="blockquote">', 
+		$html
+	);
+
+	return $html . '</p></div>';
+}
+
+/**
+ * Collects the paths to all .md files in ./posts into an associative array
+ * with posts filed away by year and month. 
+ * 
+ * @author Devin Gunay <devingunay@gmail.com>
+ */
+function get_archive_by_year() {  
+  $arhive = array();
+  $timestamp_archive = load_archive();
+  foreach ($timestamp_archive as $publish_time => $post) {
+    // construct datetime from Unix timestamp
+    $post_datetime = DateTime::createFromFormat(
+      'U', // unix timestamp
+      $publish_time,
+      new DateTimeZone('America/Los_Angeles')
+    );
+  
+    // use year and month to sort posts into data structure ($archive)
+    $year = $post_datetime->format('Y');
+    $month = $post_datetime->format('m');
+  
+    $archive[$year][$month][] = $post;
+	}
+	  
+  // sort years descending
+  arsort($archive);
+
+  // sort months
+  foreach ($archive as $year => &$months) {
+    uksort($months, function($a, $b) {
+      $month_a = date_parse($a)['month'];
+      $month_b = date_parse($b)['month'];
+  
+      return $month_a - $month_b;
+    });
+  }
+
+  return $archive;
 }
