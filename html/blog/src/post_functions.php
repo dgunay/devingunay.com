@@ -1,6 +1,6 @@
 <?php
 require_once(__DIR__ . '/../config/config.php');
-require_once(__DIR__ . '/generate_archive.php');
+// require_once(__DIR__ . '/generate_archive.php');
 require_once($GLOBALS['parsedown_path']);
 
 /**
