@@ -3,18 +3,8 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 	
-	$required_params = array(
-		'y',
-		'm',
-		'd',
-		'h',
-		'min',
-	);
-
-	foreach ($required_params as $param) {
-		if (!isset($_GET[$param]) || !is_numeric($_GET[$param])) {
-			header("Location: http://{$_SERVER['HTTP_HOST']}/blog");
-		}
+	if (!isset($_GET['t']) || !is_numeric($_GET['t'])) {
+		header("Location: http://{$_SERVER['HTTP_HOST']}/blog");
 	}
 
 	require_once(__DIR__ . '/config/config.php');
@@ -68,17 +58,11 @@
 						require_once($GLOBALS['parsedown_path']);
 						require_once(__DIR__ . '/src/post_functions.php');
 
-						$post = get_post(
-							$_GET['y'],
-							$_GET['m'],
-							$_GET['d'],
-							$_GET['h'],
-							$_GET['min']
-						);
+						$archive = load_archive();
 
+						$post = $archive[$_GET['t']] ?? false;
 						if ($post) {
-							
-							echo render_post($post['path']);
+							echo render_post($post);
 									
 							// grab for later use
 							// prev / next page
@@ -102,22 +86,22 @@
 							<h1>Post Not Found</h1>
 							<p>Sorry, the post you were looking for could not be found.</p>
 							<?php
+							// TODO: put this in another file
 							$posts_close_to_time = array_filter($archive, function($timestamp) {
 									return abs($timestamp - $_GET['t']) < 259200;
 								}, ARRAY_FILTER_USE_KEY
 							);
 
 							if (!empty($posts_close_to_time)) {
-								// TODO: put this in another file
 								?>
 								<p>Were you perhaps looking for posts at these times?:</p>
 								<ul>
 								<?php
-								foreach ($posts_close_to_time as $post) {
-									// TODO: use generate_link_to_post()
-									echo '<li><a href="/blog/post.php?t=' . $post['last_modified'] . '">'
-										. date("m-d-Y - g:i a", $post['last_modified'])
-										. '</a></li>' . PHP_EOL;
+								foreach ($posts_close_to_time as $publish_date => $post) {
+									echo '<li>';
+									echo '<b>' , date("m-d-Y - g:i a", $publish_date) . ':</b> ';
+									echo generate_link_to_post($post);
+									echo '</li>';
 								}
 								?></ul><?php
 							}

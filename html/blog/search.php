@@ -48,6 +48,7 @@
 		<div class="row">
 			<!-- Content -->
 			<div class="col-sm-8">
+				<h1>Search</h1><hr>
         <?php
           require_once($GLOBALS['blog_root'] . '/src/post_functions.php');
 

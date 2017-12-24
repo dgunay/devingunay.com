@@ -7,10 +7,10 @@
 
     $archive = load_archive();
     $most_recent_posts = array_slice($archive, 0, 5, true);
-    foreach ($most_recent_posts as $publish_date => $metadata) {
-      echo '<li><a href="/blog/post.php?t=' . $metadata['last_modified'] . '">'
-        . $metadata['title']
-        . '</a><hr></li>' . PHP_EOL;
+    foreach ($most_recent_posts as $publish_date => $post) {
+      echo '<li>';
+      echo generate_link_to_post($post); 
+      echo '<hr></li>' . PHP_EOL;
     }
   ?>
   </ul>
@@ -21,8 +21,8 @@
       foreach ($archive_by_year as $year => $months) {
         echo '<li><b>' . $year . '</b></li>' . PHP_EOL;
         foreach ($months as $month => $posts) {
-          echo '<li><a href="/blog/archive?m='.date('m', strtotime($month)).'&y='.$year.'">' 
-            . $month 
+          echo '<li><a href="/blog/archive?m='.$month.'&y='.$year.'">' 
+            . date('F', mktime(0,0,0,$month)) 
             . '</a></li>' . PHP_EOL;
         }
       }

@@ -13,7 +13,7 @@ require_once($GLOBALS['parsedown_path']);
  */
 
 function generate_link_to_post(array $post, string $text = null) {
-	$link = '<a href="/blog/post.php?t=' . $post['last_modified'] . '">';
+	$link = '<a href="/blog/post.php?t=' . $post['publish_date'] . '">';
 	if ($text === null) {
 		$link .= $post['title'];
 	}
@@ -25,20 +25,6 @@ function generate_link_to_post(array $post, string $text = null) {
 	return $link;
 }
 
-/**
- * Returns the paths to the n most recent blog posts.
- *
- * @param int $max Max number of posts to retrieve.
- * @return array Associative array of file paths keyed to their modification
- * times.
- */
-function most_recent_posts($max = 5) {
-	$archive = load_archive();
-
-	$most_recent_posts = array_slice($archive, 0, $max);
-
-	return $most_recent_posts;
-}
 
 /**
  * Gets all posts modified between two Unix timestamps
@@ -104,6 +90,7 @@ function get_posts_by_tags(array $tags) {
  * 	'title' 				=> string, 
  * 	'tags' 					=> string[], 
  * 	'last_modified' => int, 
+ * 	...
  * );
  *
  * @param string $path
@@ -126,11 +113,20 @@ function get_post_data(string $path) {
 		}
 	}
 
+	preg_match('/^\d+/', basename($path), $match);
+	if (isset($match[0])) {
+		$publish_date = $match[0];
+	}
+	else {
+		throw new Exception('Failed to regex publish date from filename ' . $path);
+	}
+
 	return array(
 		'path'					=> $path,
 		'title'					=> $title,
 		'tags'					=> $tags,
 		'last_modified'	=> filemtime($path),
+		'publish_date'	=> $publish_date,
 	);
 }
 
@@ -162,19 +158,24 @@ function publish_post(string $path_to_post, int $time) {
 	return copy($path_to_post, $destination);
 }
 
-function get_archive_chronological() {
-	return json_decode(
-		file_get_contents($GLOBALS['blog_root'] . '/archive_chronological.json'),
-		true
-	);
-}
-
+/**
+ * TODO: document
+ *
+ * @param array $post
+ * @return string
+ */
 function render_post(array $post) : string {
 	$html = '<div class="blog-post">'
 		. '<p class="text-muted">'
-		. date("m/d/Y - g:i a", $post['last_modified'])
-		. '</p>'
-		. '<p>';
+		. date("m/d/Y - g:i a", $post['publish_date'])
+		. '</p>';
+
+	// difference of greather than 1 min
+	if (abs($post['last_modified'] - $post['publish_date']) > 59) {
+		$html .= '<p class="text-muted">'
+		. '<i>Edited: ' . date("m/d/Y - g:i a", $post['last_modified'])
+		. '</i></p>';
+	}
 
 	// echo post tags with links to search
 	$html .= "<p>";
