@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <h1>The Man</h1>
-                <p>Devin Gunay is a PHP developer for 
+                <p>Devin Gunay is a software engineer. Former PHP developer for 
 			<a href = "http://feedonomics.com/">Feedonomics.</a>
 		            In his
                     spare time he likes to code, play jazz piano, and play
