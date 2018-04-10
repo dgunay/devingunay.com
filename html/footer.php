@@ -10,7 +10,7 @@
     <div class="container">
         <span class-"text-muted" style="font-size:75%;">
             <?php
-            echo '&copy Devin Gunay ' . date('Y');
+            echo '&copy Devin Gunay 2017-' . date('Y');
             ?>
         </span>
     </div>
