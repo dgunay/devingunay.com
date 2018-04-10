@@ -23,7 +23,6 @@
     ?>
 
     <!-- dynamically create content here -->
-
     <div class="jumbotron">
         <div class="container">
             <h1 class="display-3">
@@ -46,12 +45,10 @@
             <div class="col-lg-6">
                 <h1>The Stack</h1>
                 <p>Front-end made with the Bootstrap 4 framework. 
-                    Back-end running PHP 7.2. Served with Apache2, running on
-                    Ubuntu Server 16.04.2 LTS.
+                    Back-end running PHP 7.
                 </p>
                 <p>
-                    Blog is pure PHP operating on the filesystem, with posts 
-                    converted from Markdown to HTML with the 
+                    Blog is in PHP, with posts converted from Markdown to HTML with the 
                     <a href="http://parsedown.org/">Parsedown</a>
                     library.
                 </p>
