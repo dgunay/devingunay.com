@@ -1,0 +1,17 @@
+{
+    "name": "devin/devingunay.com",
+    "description": "Devin Gunay's website",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Devin Gunay",
+            "email": "devingunay@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "BestBans\\": "src/"
+        }
+    }
+}
