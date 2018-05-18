@@ -6,11 +6,13 @@
  * @author Devin Gunay <devingunay@gmail.com>
  */
 
-require 'src/BestBans.php';
-require 'config.php';
+require __DIR__ . '/vendor/autoload.php';
+require __DIR__ . '/config.php';
 
-$bb = new BestBans(
-	$GLOBALS['champion.gg_key']
+use BestBans\BanRanker;
+$pdo = new \PDO('sqlite:' . __DIR__ . '/champions.db');
+$bb = new BanRanker(
+	$GLOBALS['champion.gg_key'], $pdo
 );
 
 // get champs for all elos
@@ -38,8 +40,6 @@ foreach ($static_champions['data'] as $champ) {
 }
 
 // spin up our DB and insert our champions, one row per elo
-$pdo = new PDO('sqlite:' . __DIR__ . '/champions.db');
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 foreach ($elos as $elo => $champions) {
 	foreach ($champions as $champion) {
 		$statement = $pdo->prepare("INSERT INTO champions (
