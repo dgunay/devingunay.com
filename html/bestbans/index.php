@@ -3,6 +3,9 @@
 <?php
 	ini_set('display_errors', 1);
 	require_once(__DIR__ . '/../../config.php');
+	require_once($GLOBALS['project_root'] . '/vendor/autoload.php');
+	use BestBans\BestBansView;
+	use BestBans\BanRanker;
 ?>	
 <head>
 	<!-- required meta tags -->
@@ -39,22 +42,16 @@
 	</div>
 
 	<div class="container">
-		<div class="row justify-content-md-left align-items-center">
-			<div class="col-md-6">
-				<h2 class="display-4">
-					Patch 8.10
-					<!-- TODO: dynamically load this -->
-				</h2>
-				<div class="row justify-content-md-left align-items-center">
-					<div class="col-md-6">
-						<p>haha</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<img src="/img/code_crop.jpg" alt="" class="img-fluid">
-			</div>
-		</div>
+		<?php
+			// TODO: get the view
+			$ranker = new BanRanker(
+				$GLOBALS['champion.gg_key'],
+				new \PDO('sqlite:' . $GLOBALS['project_root'] . '/champions.db')
+			);
+			$bans = $ranker->best_bans();
+			$view = new BestBansView($bans);
+			echo $view->render();
+		?>
 	</div>
 
 

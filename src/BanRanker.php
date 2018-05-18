@@ -1,7 +1,9 @@
 <?php declare(strict_types=1);
 
+namespace BestBans;
+
 // TODO: use an API to get win% pick% per-elo
-class BestBans
+class BanRanker
 {
 	protected $key = '';
 
@@ -9,9 +11,12 @@ class BestBans
 
 	protected $db;
 
-	public function __construct(string $key, PDO $db = null) {
+	public $patch;
+
+	public function __construct(string $key, \PDO $db = null) {
 		$this->key = $key;
 		$this->db = $db;
+		$this->db->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
 	}
 
 	public function get_champions(string $elo = null) {
@@ -31,10 +36,6 @@ class BestBans
 		return $this->champions;
 	}
 
-	public function get_champion(string $id) {
-		return json_decode($this->get("champions/$id?"), true);
-	}
-
 	private function get(string $endpoint, array $args = []) {
 		$args['api_key'] = $this->key;
 		print_r($args);
@@ -49,7 +50,7 @@ class BestBans
 
 	public function best_bans(string $elo = null, int $limit = 5) {
 		if ($this->db === null) {
-			throw new Exception('Database cannot be null.');
+			throw new \Exception('Database cannot be null.');
 		}
 
 		$elos = ['BRONZE','SILVER','GOLD','PLATINUM'];
@@ -60,8 +61,6 @@ class BestBans
 				return strcasecmp($a, $elo) === 0;
 			});
 		}
-
-		print_r($elos); exit;
 		
 		$top_bans = [];
 		foreach ($elos as $elo) {
@@ -75,9 +74,15 @@ class BestBans
 				"
 			);
 
-			$top_bans[$elo] = $statement->fetchAll(PDO::FETCH_ASSOC);
+			$top_bans[$elo] = $statement->fetchAll(\PDO::FETCH_ASSOC);
 		}
 
-		return $top_bans;
+		// TODO: make dynamic
+		$patch = '8.10';
+
+		return [
+			'patch'    => $patch,
+			'top_bans' => $top_bans
+		];
 	}
 }
