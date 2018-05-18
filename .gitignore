@@ -9,3 +9,5 @@ sitemap.xml
 config.php
 test.php
 html/img
+/vendor/
+*.db

@@ -1,0 +1,2912 @@
+[
+	{
+		"_id": {
+			"championId": 81,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 81,
+		"winRate": 0.48400229787446614,
+		"playRate": 0.18419827795750332,
+		"gamesPlayed": 40037,
+		"percentRolePlayed": 0.748033555667657,
+		"banRate": 0.016416722513683157,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 104,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 104,
+		"winRate": 0.526636628677445,
+		"playRate": 0.1388675680462892,
+		"gamesPlayed": 30184,
+		"percentRolePlayed": 0.9792051905920519,
+		"banRate": 0.04072589364172133,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 51,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 51,
+		"winRate": 0.4857423795476893,
+		"playRate": 0.10761500411379375,
+		"gamesPlayed": 23391,
+		"percentRolePlayed": 0.7954228585030775,
+		"banRate": 0.015676014716008338,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 25,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 25,
+		"winRate": 0.5159447881960971,
+		"playRate": 0.10632680774972798,
+		"gamesPlayed": 23111,
+		"percentRolePlayed": 0.8580285873398923,
+		"banRate": 0.03465531016947333,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 64,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 64,
+		"winRate": 0.4754519712480941,
+		"playRate": 0.10560909834689135,
+		"gamesPlayed": 22955,
+		"percentRolePlayed": 0.9782238131765107,
+		"banRate": 0.007006819725830766,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 145,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 145,
+		"winRate": 0.5066678326264702,
+		"playRate": 0.10522263943767161,
+		"gamesPlayed": 22871,
+		"percentRolePlayed": 0.7284453928719304,
+		"banRate": 0.053508853988550466,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 497,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 497,
+		"winRate": 0.5152549792077041,
+		"playRate": 0.10510302120386551,
+		"gamesPlayed": 22845,
+		"percentRolePlayed": 0.9108488497268848,
+		"banRate": 0.013824245221821282,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 412,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 412,
+		"winRate": 0.47032695301767563,
+		"playRate": 0.100470114994529,
+		"gamesPlayed": 21838,
+		"percentRolePlayed": 0.9289603539220691,
+		"banRate": 0.0051197784317544345,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 202,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 202,
+		"winRate": 0.5061584398619017,
+		"playRate": 0.09861143166923411,
+		"gamesPlayed": 21434,
+		"percentRolePlayed": 0.784036871753603,
+		"banRate": 0.002408450509830864,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 40,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 40,
+		"winRate": 0.5212169361622582,
+		"playRate": 0.09844580642242566,
+		"gamesPlayed": 21398,
+		"percentRolePlayed": 0.939044191863782,
+		"banRate": 0.009987286816474691,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 267,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 267,
+		"winRate": 0.5308483290488432,
+		"playRate": 0.09306298590115086,
+		"gamesPlayed": 20228,
+		"percentRolePlayed": 0.9445715619892598,
+		"banRate": 0.002630816204785003,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 117,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 117,
+		"winRate": 0.5034421612600396,
+		"playRate": 0.08821384673070332,
+		"gamesPlayed": 19174,
+		"percentRolePlayed": 0.9034538001225086,
+		"banRate": 0.020104925936888014,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 121,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 121,
+		"winRate": 0.4992982653118509,
+		"playRate": 0.08195229226108366,
+		"gamesPlayed": 17813,
+		"percentRolePlayed": 0.9908772320186906,
+		"banRate": 0.04126187164438665,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 498,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 498,
+		"winRate": 0.5047425474254743,
+		"playRate": 0.08148762142975995,
+		"gamesPlayed": 17712,
+		"percentRolePlayed": 0.7947590415507494,
+		"banRate": 0.010389078623909066,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 5,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 5,
+		"winRate": 0.5327576837147515,
+		"playRate": 0.07619221423318961,
+		"gamesPlayed": 16561,
+		"percentRolePlayed": 0.9763589199386865,
+		"banRate": 0.011531578229018263,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 141,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 141,
+		"winRate": 0.48359675083433035,
+		"playRate": 0.0730637373490299,
+		"gamesPlayed": 15881,
+		"percentRolePlayed": 0.9663502494827796,
+		"banRate": 0.010036360625016293,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 16,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 16,
+		"winRate": 0.519891562182311,
+		"playRate": 0.06788334768496544,
+		"gamesPlayed": 14755,
+		"percentRolePlayed": 0.9313849261456887,
+		"banRate": 0.006359658875688375,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 222,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 222,
+		"winRate": 0.5188034802617387,
+		"playRate": 0.06398195298236628,
+		"gamesPlayed": 13907,
+		"percentRolePlayed": 0.7990232691755242,
+		"banRate": 0.0009124661275704324,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 67,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 67,
+		"winRate": 0.49069632213984593,
+		"playRate": 0.0632964484886313,
+		"gamesPlayed": 13758,
+		"percentRolePlayed": 0.7663770053475936,
+		"banRate": 0.007177044499209452,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 43,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 43,
+		"winRate": 0.4786205830047166,
+		"playRate": 0.059500869915937525,
+		"gamesPlayed": 12933,
+		"percentRolePlayed": 0.7188194753223655,
+		"banRate": 0.00131195760022942,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 12,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 12,
+		"winRate": 0.4996859296482412,
+		"playRate": 0.058594531759791256,
+		"gamesPlayed": 12736,
+		"percentRolePlayed": 0.931947899897556,
+		"banRate": 0.008334879669487899,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 39,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 39,
+		"winRate": 0.5007725461494673,
+		"playRate": 0.05657482388898815,
+		"gamesPlayed": 12297,
+		"percentRolePlayed": 0.5988895923635124,
+		"banRate": 0.040973563019204726,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 157,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 157,
+		"winRate": 0.4800463652922669,
+		"playRate": 0.055567270304236714,
+		"gamesPlayed": 12078,
+		"percentRolePlayed": 0.44358748347289556,
+		"banRate": 0.0548614508364784,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 238,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 238,
+		"winRate": 0.5032421052631579,
+		"playRate": 0.054633327940289036,
+		"gamesPlayed": 11875,
+		"percentRolePlayed": 0.7181301402999516,
+		"banRate": 0.049731704287363954,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 11,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 11,
+		"winRate": 0.4872714847086964,
+		"playRate": 0.05385580942054934,
+		"gamesPlayed": 11706,
+		"percentRolePlayed": 0.91453125,
+		"banRate": 0.016861453903591436,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 18,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 18,
+		"winRate": 0.4928344632283532,
+		"playRate": 0.05361197225163689,
+		"gamesPlayed": 11653,
+		"percentRolePlayed": 0.8006733544042874,
+		"banRate": 0.0016033333384451883,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 7,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 7,
+		"winRate": 0.5011845222426955,
+		"playRate": 0.052434192718776765,
+		"gamesPlayed": 11397,
+		"percentRolePlayed": 0.7203261281759575,
+		"banRate": 0.044621893972969534,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 48,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 48,
+		"winRate": 0.5270150575730735,
+		"playRate": 0.05194191767965164,
+		"gamesPlayed": 11290,
+		"percentRolePlayed": 0.7707536865101038,
+		"banRate": 0.004578432981279875,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 103,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 103,
+		"winRate": 0.5093365862813174,
+		"playRate": 0.049029673756602964,
+		"gamesPlayed": 10657,
+		"percentRolePlayed": 0.7345602426247587,
+		"banRate": 0.0033561884372905735,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 201,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 201,
+		"winRate": 0.4744888209440092,
+		"playRate": 0.04815093980825811,
+		"gamesPlayed": 10466,
+		"percentRolePlayed": 0.9369740376007162,
+		"banRate": 0.004714152733027746,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 142,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 142,
+		"winRate": 0.48176621328602404,
+		"playRate": 0.04667871539218295,
+		"gamesPlayed": 10146,
+		"percentRolePlayed": 0.6376319758672699,
+		"banRate": 0.017637433501155535,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 122,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 122,
+		"winRate": 0.4981722177091795,
+		"playRate": 0.04530770640471296,
+		"gamesPlayed": 9848,
+		"percentRolePlayed": 0.701824401368301,
+		"banRate": 0.03985560031836633,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 164,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 164,
+		"winRate": 0.509003967850239,
+		"playRate": 0.045220293080008495,
+		"gamesPlayed": 9829,
+		"percentRolePlayed": 0.4858145512060103,
+		"banRate": 0.023839136055600625,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 24,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 24,
+		"winRate": 0.5062752826470284,
+		"playRate": 0.04435536123556434,
+		"gamesPlayed": 9641,
+		"percentRolePlayed": 0.49479086476777007,
+		"banRate": 0.014012105895144606,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 53,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 53,
+		"winRate": 0.5001578781180929,
+		"playRate": 0.043711263053531464,
+		"gamesPlayed": 9501,
+		"percentRolePlayed": 0.9177936630602782,
+		"banRate": 0.016657490886840397,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 107,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 107,
+		"winRate": 0.5046847036530161,
+		"playRate": 0.04370206165093099,
+		"gamesPlayed": 9499,
+		"percentRolePlayed": 0.8052047130626431,
+		"banRate": 0.010038660959791681,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 236,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 236,
+		"winRate": 0.49644549763033174,
+		"playRate": 0.042712910871380495,
+		"gamesPlayed": 9284,
+		"percentRolePlayed": 0.7199689802248934,
+		"banRate": 0.0005313773331145459,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 19,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 19,
+		"winRate": 0.5162852112676056,
+		"playRate": 0.04181117341653446,
+		"gamesPlayed": 9088,
+		"percentRolePlayed": 0.9660890825980653,
+		"banRate": 0.018568302306929067,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 36,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 36,
+		"winRate": 0.5193885579408789,
+		"playRate": 0.040932439468189606,
+		"gamesPlayed": 8897,
+		"percentRolePlayed": 0.5133575673648376,
+		"banRate": 0.026722222307419805,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 41,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 41,
+		"winRate": 0.4839687536434651,
+		"playRate": 0.039460215052114445,
+		"gamesPlayed": 8577,
+		"percentRolePlayed": 0.7165413533834587,
+		"banRate": 0.007308163581406547,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 8,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 8,
+		"winRate": 0.5017040780350217,
+		"playRate": 0.039147367363698476,
+		"gamesPlayed": 8509,
+		"percentRolePlayed": 0.4353988640433915,
+		"banRate": 0.0260221537574435,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 63,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 63,
+		"winRate": 0.5046684789032029,
+		"playRate": 0.0389265337012872,
+		"gamesPlayed": 8461,
+		"percentRolePlayed": 0.6979295553905799,
+		"banRate": 0.009316355840319961,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 432,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 432,
+		"winRate": 0.49898652676761657,
+		"playRate": 0.038586081805069825,
+		"gamesPlayed": 8387,
+		"percentRolePlayed": 0.9135170460734124,
+		"banRate": 0.0007169376716624826,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 89,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 89,
+		"winRate": 0.49187432286023836,
+		"playRate": 0.03821802570105103,
+		"gamesPlayed": 8307,
+		"percentRolePlayed": 0.9271205357142858,
+		"banRate": 0.005080672740572845,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 28,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 28,
+		"winRate": 0.5057443167929602,
+		"playRate": 0.03764293803852167,
+		"gamesPlayed": 8182,
+		"percentRolePlayed": 0.9927202135404029,
+		"banRate": 0.015392306760377193,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 105,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 105,
+		"winRate": 0.513563274825089,
+		"playRate": 0.037481913493013455,
+		"gamesPlayed": 8147,
+		"percentRolePlayed": 0.7028729186437753,
+		"banRate": 0.020179303427958883,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 35,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 35,
+		"winRate": 0.5212457445467155,
+		"playRate": 0.03648816201216272,
+		"gamesPlayed": 7931,
+		"percentRolePlayed": 0.9259778166958552,
+		"banRate": 0.009086322362781197,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 92,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 92,
+		"winRate": 0.4914337240757439,
+		"playRate": 0.03571524419372327,
+		"gamesPlayed": 7763,
+		"percentRolePlayed": 0.6336108390466862,
+		"banRate": 0.003230436802902716,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 154,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 154,
+		"winRate": 0.4606843124596514,
+		"playRate": 0.035632431570319034,
+		"gamesPlayed": 7745,
+		"percentRolePlayed": 0.9602033225886437,
+		"banRate": 0.00468501515920617,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 99,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 99,
+		"winRate": 0.5184313725490196,
+		"playRate": 0.035195364946796724,
+		"gamesPlayed": 7650,
+		"percentRolePlayed": 0.49073064340239914,
+		"banRate": 0.0011401992703338093,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 119,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 119,
+		"winRate": 0.5062180913732164,
+		"playRate": 0.03514475723249414,
+		"gamesPlayed": 7639,
+		"percentRolePlayed": 0.7549164937246764,
+		"banRate": 0.011841356645437133,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 4,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 4,
+		"winRate": 0.5254742547425474,
+		"playRate": 0.03395317559573331,
+		"gamesPlayed": 7380,
+		"percentRolePlayed": 0.6611126041386725,
+		"banRate": 0.0030318412339609157,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 110,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 110,
+		"winRate": 0.4803921568627451,
+		"playRate": 0.033787550348924854,
+		"gamesPlayed": 7344,
+		"percentRolePlayed": 0.7896774193548387,
+		"banRate": 0.0010067798533613258,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 15,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 15,
+		"winRate": 0.5116819237600765,
+		"playRate": 0.033672532816418986,
+		"gamesPlayed": 7319,
+		"percentRolePlayed": 0.7926142516785791,
+		"banRate": 0.00022619958624645173,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 24,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 24,
+		"winRate": 0.48736610821202964,
+		"playRate": 0.033502306868310294,
+		"gamesPlayed": 7282,
+		"percentRolePlayed": 0.3737233769566333,
+		"banRate": 0.014012105895144606,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 21,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 21,
+		"winRate": 0.5118490137647226,
+		"playRate": 0.0324211420627551,
+		"gamesPlayed": 7047,
+		"percentRolePlayed": 0.7354414527238572,
+		"banRate": 0.0008212195148133892,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 114,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 114,
+		"winRate": 0.46688459351904493,
+		"playRate": 0.032370534348452516,
+		"gamesPlayed": 7036,
+		"percentRolePlayed": 0.706283878739209,
+		"banRate": 0.011643527854753795,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 157,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 157,
+		"winRate": 0.481234603680626,
+		"playRate": 0.031749439672920814,
+		"gamesPlayed": 6901,
+		"percentRolePlayed": 0.2534523284853827,
+		"banRate": 0.0548614508364784,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 164,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 164,
+		"winRate": 0.5111208024422155,
+		"playRate": 0.03164822424431565,
+		"gamesPlayed": 6879,
+		"percentRolePlayed": 0.340005931198102,
+		"banRate": 0.023839136055600625,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 59,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 59,
+		"winRate": 0.49908031882280807,
+		"playRate": 0.030014975282732267,
+		"gamesPlayed": 6524,
+		"percentRolePlayed": 0.8865334963989673,
+		"banRate": 0.001081157344432193,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 245,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 245,
+		"winRate": 0.5040825758742875,
+		"playRate": 0.029863152139824514,
+		"gamesPlayed": 6491,
+		"percentRolePlayed": 0.5604386116387498,
+		"banRate": 0.0023831468273016,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 516,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 516,
+		"winRate": 0.4763767209011264,
+		"playRate": 0.029407682711101262,
+		"gamesPlayed": 6392,
+		"percentRolePlayed": 0.7076275877338647,
+		"banRate": 0.002301101553646107,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 56,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 56,
+		"winRate": 0.4999216914643696,
+		"playRate": 0.02937547780199962,
+		"gamesPlayed": 6385,
+		"percentRolePlayed": 0.9202940328624964,
+		"banRate": 0.0023724119316831244,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 55,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 55,
+		"winRate": 0.47915340547422025,
+		"playRate": 0.028910806970675898,
+		"gamesPlayed": 6284,
+		"percentRolePlayed": 0.7118260081558677,
+		"banRate": 0.014918437796647338,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 22,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 22,
+		"winRate": 0.5017845554834524,
+		"playRate": 0.028358722814647713,
+		"gamesPlayed": 6164,
+		"percentRolePlayed": 0.780055682105796,
+		"banRate": 0.0003051777468680942,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 77,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 77,
+		"winRate": 0.5411515940143136,
+		"playRate": 0.028285111593843955,
+		"gamesPlayed": 6148,
+		"percentRolePlayed": 0.9108148148148149,
+		"banRate": 0.0014844827083834934,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 29,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 29,
+		"winRate": 0.5245122151172323,
+		"playRate": 0.02805967723013245,
+		"gamesPlayed": 6099,
+		"percentRolePlayed": 0.6196281621456873,
+		"banRate": 0.002597077961412651,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 61,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 61,
+		"winRate": 0.4712468193384224,
+		"playRate": 0.027121134164884535,
+		"gamesPlayed": 5895,
+		"percentRolePlayed": 0.7327532628962088,
+		"banRate": 0.0006149561632869636,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 37,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 37,
+		"winRate": 0.5116794543904518,
+		"playRate": 0.02698311312587749,
+		"gamesPlayed": 5865,
+		"percentRolePlayed": 0.9226050023596036,
+		"banRate": 0.00027220628175420465,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 54,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 54,
+		"winRate": 0.5097636176772867,
+		"playRate": 0.026858894190771147,
+		"gamesPlayed": 5838,
+		"percentRolePlayed": 0.5845599279062782,
+		"banRate": 0.0020986720934119945,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 99,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 99,
+		"winRate": 0.5130298818624045,
+		"playRate": 0.026481636684151887,
+		"gamesPlayed": 5756,
+		"percentRolePlayed": 0.3692347167874783,
+		"banRate": 0.0011401992703338093,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 96,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 96,
+		"winRate": 0.5043584379358438,
+		"playRate": 0.02638962265814719,
+		"gamesPlayed": 5736,
+		"percentRolePlayed": 0.7922651933701658,
+		"banRate": 0.0007361071281240464,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 8,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 8,
+		"winRate": 0.4979828100333275,
+		"playRate": 0.02622859811263897,
+		"gamesPlayed": 5701,
+		"percentRolePlayed": 0.29171570383257434,
+		"banRate": 0.0260221537574435,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 254,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 254,
+		"winRate": 0.4900662251655629,
+		"playRate": 0.025704118164412197,
+		"gamesPlayed": 5587,
+		"percentRolePlayed": 0.9699652777777777,
+		"banRate": 0.0006172564980623513,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 98,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 98,
+		"winRate": 0.4823828550671994,
+		"playRate": 0.02533146135909317,
+		"gamesPlayed": 5506,
+		"percentRolePlayed": 0.603595702696777,
+		"banRate": 0.000602687711151563,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 86,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 86,
+		"winRate": 0.5084499363983281,
+		"playRate": 0.025317659255192467,
+		"gamesPlayed": 5503,
+		"percentRolePlayed": 0.7171901472696468,
+		"banRate": 0.00274123227400361,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 143,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 143,
+		"winRate": 0.5123377810272345,
+		"playRate": 0.02517043681358495,
+		"gamesPlayed": 5471,
+		"percentRolePlayed": 0.8507230601772664,
+		"banRate": 0.0015925984428267128,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 76,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 76,
+		"winRate": 0.480594243268338,
+		"playRate": 0.024774776501764753,
+		"gamesPlayed": 5385,
+		"percentRolePlayed": 0.9236706689536878,
+		"banRate": 0.00115246772246921,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 27,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 27,
+		"winRate": 0.5326251896813353,
+		"playRate": 0.024254897254838214,
+		"gamesPlayed": 5272,
+		"percentRolePlayed": 0.5614483493077742,
+		"banRate": 0.00389369999647282,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 91,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 91,
+		"winRate": 0.5200990664888551,
+		"playRate": 0.02414908112493281,
+		"gamesPlayed": 5249,
+		"percentRolePlayed": 0.6221405712931136,
+		"banRate": 0.003934339244171335,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 36,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 36,
+		"winRate": 0.5120366832250669,
+		"playRate": 0.02408007060542929,
+		"gamesPlayed": 5234,
+		"percentRolePlayed": 0.3020021926028504,
+		"banRate": 0.026722222307419805,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 58,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 58,
+		"winRate": 0.5000989119683482,
+		"playRate": 0.02325654507268725,
+		"gamesPlayed": 5055,
+		"percentRolePlayed": 0.671047391477499,
+		"banRate": 0.0017980950160946757,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 17,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 17,
+		"winRate": 0.5017565612729903,
+		"playRate": 0.022262793591836517,
+		"gamesPlayed": 4839,
+		"percentRolePlayed": 0.5876852076754918,
+		"banRate": 0.005958633846512462,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 223,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 223,
+		"winRate": 0.4535393610357068,
+		"playRate": 0.022032758526824774,
+		"gamesPlayed": 4789,
+		"percentRolePlayed": 0.7518053375196232,
+		"banRate": 0.002860082904065305,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 14,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 14,
+		"winRate": 0.4982869379014989,
+		"playRate": 0.021485275072096823,
+		"gamesPlayed": 4670,
+		"percentRolePlayed": 0.5615005410604785,
+		"banRate": 0.0024828280009017312,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 90,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 90,
+		"winRate": 0.5093478260869565,
+		"playRate": 0.021163225981080384,
+		"gamesPlayed": 4600,
+		"percentRolePlayed": 0.6562990440861749,
+		"banRate": 0.004945719767083436,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 150,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 150,
+		"winRate": 0.4635747101290746,
+		"playRate": 0.021029805643373572,
+		"gamesPlayed": 4571,
+		"percentRolePlayed": 0.730775379696243,
+		"banRate": 0.002089470754310444,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 13,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 13,
+		"winRate": 0.42994957246217935,
+		"playRate": 0.020983798630371225,
+		"gamesPlayed": 4561,
+		"percentRolePlayed": 0.6070810594968721,
+		"banRate": 0.0024536904270801544,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 101,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 101,
+		"winRate": 0.5102974828375286,
+		"playRate": 0.020105064682026365,
+		"gamesPlayed": 4370,
+		"percentRolePlayed": 0.5993690851735016,
+		"banRate": 0.0010819241226906555,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 45,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 45,
+		"winRate": 0.5018315018315018,
+		"playRate": 0.020095863279425894,
+		"gamesPlayed": 4368,
+		"percentRolePlayed": 0.5970475669764899,
+		"banRate": 0.0018625043898055297,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 34,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 34,
+		"winRate": 0.4918596652144004,
+		"playRate": 0.020063658370324252,
+		"gamesPlayed": 4361,
+		"percentRolePlayed": 0.6797069825436409,
+		"banRate": 0.00385459430529123,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 20,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 20,
+		"winRate": 0.517480898356101,
+		"playRate": 0.019870428915714385,
+		"gamesPlayed": 4319,
+		"percentRolePlayed": 0.8810689514483884,
+		"banRate": 0.0009868436186412997,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 75,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 75,
+		"winRate": 0.4844952203310795,
+		"playRate": 0.01973240787670734,
+		"gamesPlayed": 4289,
+		"percentRolePlayed": 0.7624888888888889,
+		"banRate": 0.0030947170511548446,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 23,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 23,
+		"winRate": 0.48650551513729173,
+		"playRate": 0.019603588240300764,
+		"gamesPlayed": 4261,
+		"percentRolePlayed": 0.544050051072523,
+		"banRate": 0.004920416084554172,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 31,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 31,
+		"winRate": 0.501574993942331,
+		"playRate": 0.01898709426606929,
+		"gamesPlayed": 4127,
+		"percentRolePlayed": 0.6047772567409144,
+		"banRate": 0.0027956735303544507,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 44,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 44,
+		"winRate": 0.49296458030082485,
+		"playRate": 0.018964090759568116,
+		"gamesPlayed": 4122,
+		"percentRolePlayed": 0.8986265533028123,
+		"banRate": 0.0006486944066593158,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 38,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 38,
+		"winRate": 0.4692917285785042,
+		"playRate": 0.01857763185034839,
+		"gamesPlayed": 4038,
+		"percentRolePlayed": 0.7006767308693389,
+		"banRate": 0.004409741764418115,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 69,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 69,
+		"winRate": 0.49314043402344726,
+		"playRate": 0.018444211512641577,
+		"gamesPlayed": 4009,
+		"percentRolePlayed": 0.6650630391506304,
+		"banRate": 0.0016179021253559767,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 203,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 203,
+		"winRate": 0.4754509018036072,
+		"playRate": 0.018365999590537585,
+		"gamesPlayed": 3992,
+		"percentRolePlayed": 0.9762778185375397,
+		"banRate": 0.0005068404288437444,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 9,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 9,
+		"winRate": 0.5077234742972905,
+		"playRate": 0.018168169434627485,
+		"gamesPlayed": 3949,
+		"percentRolePlayed": 0.5399972651442636,
+		"banRate": 0.0014062713260203136,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 50,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 50,
+		"winRate": 0.5054916985951469,
+		"playRate": 0.0180117455904195,
+		"gamesPlayed": 3915,
+		"percentRolePlayed": 0.39746192893401017,
+		"banRate": 0.008238265608921618,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 420,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 420,
+		"winRate": 0.5,
+		"playRate": 0.01793353366831551,
+		"gamesPlayed": 3898,
+		"percentRolePlayed": 0.734640030154542,
+		"banRate": 0.005900358698869308,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 113,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 113,
+		"winRate": 0.4580975478307734,
+		"playRate": 0.01707320252517159,
+		"gamesPlayed": 3711,
+		"percentRolePlayed": 0.9641465315666407,
+		"banRate": 0.0010957261313429814,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 26,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 26,
+		"winRate": 0.5049905584030213,
+		"playRate": 0.017054799719970648,
+		"gamesPlayed": 3707,
+		"percentRolePlayed": 0.6934156378600823,
+		"banRate": 0.0006532950762100911,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 33,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 33,
+		"winRate": 0.5021905805038335,
+		"playRate": 0.01680176114845773,
+		"gamesPlayed": 3652,
+		"percentRolePlayed": 0.9189733266230499,
+		"banRate": 0.002166148580156699,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 131,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 131,
+		"winRate": 0.49751106194690264,
+		"playRate": 0.016636135901649276,
+		"gamesPlayed": 3616,
+		"percentRolePlayed": 0.5843568196509373,
+		"banRate": 0.00222672406257524,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 136,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 136,
+		"winRate": 0.5465959821428571,
+		"playRate": 0.01648891346004176,
+		"gamesPlayed": 3584,
+		"percentRolePlayed": 0.9414236931967428,
+		"banRate": 0.0011194962573553204,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 2,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 2,
+		"winRate": 0.482893998878295,
+		"playRate": 0.016406100836637533,
+		"gamesPlayed": 3566,
+		"percentRolePlayed": 0.7255340793489319,
+		"banRate": 0.0012973888133186316,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 102,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 102,
+		"winRate": 0.5108979947689625,
+		"playRate": 0.015831013174108174,
+		"gamesPlayed": 3441,
+		"percentRolePlayed": 0.920545746388443,
+		"banRate": 0.0006532950762100911,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 60,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 60,
+		"winRate": 0.4665498101080923,
+		"playRate": 0.015748200550703945,
+		"gamesPlayed": 3423,
+		"percentRolePlayed": 0.9788390048613097,
+		"banRate": 0.0004554662855267537,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 134,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 134,
+		"winRate": 0.46706586826347307,
+		"playRate": 0.015366342342784452,
+		"gamesPlayed": 3340,
+		"percentRolePlayed": 0.7138277409702928,
+		"banRate": 0.0005582145721607352,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 120,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 120,
+		"winRate": 0.4951997522452772,
+		"playRate": 0.014855664498458382,
+		"gamesPlayed": 3229,
+		"percentRolePlayed": 0.9217813302883243,
+		"banRate": 0.0005137414331699073,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 32,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 32,
+		"winRate": 0.5048002477547229,
+		"playRate": 0.014855664498458382,
+		"gamesPlayed": 3229,
+		"percentRolePlayed": 0.9513847967000589,
+		"banRate": 0.00033814921198198377,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 50,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 50,
+		"winRate": 0.49315494710640945,
+		"playRate": 0.01478665397895486,
+		"gamesPlayed": 3214,
+		"percentRolePlayed": 0.32629441624365485,
+		"banRate": 0.008238265608921618,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 240,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 240,
+		"winRate": 0.5036989385654551,
+		"playRate": 0.014303580342430199,
+		"gamesPlayed": 3109,
+		"percentRolePlayed": 0.6581287044877223,
+		"banRate": 0.0014216068911895644,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 111,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 111,
+		"winRate": 0.4679755391052462,
+		"playRate": 0.014294378939829728,
+		"gamesPlayed": 3107,
+		"percentRolePlayed": 0.6994597028365601,
+		"banRate": 0.00020166268197565018,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 6,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 6,
+		"winRate": 0.49818181818181817,
+		"playRate": 0.01391712143321047,
+		"gamesPlayed": 3025,
+		"percentRolePlayed": 0.7176749703440095,
+		"banRate": 0.0012720851307893675,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 72,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 72,
+		"winRate": 0.5225016545334216,
+		"playRate": 0.013903319329309764,
+		"gamesPlayed": 3022,
+		"percentRolePlayed": 0.9879045439686172,
+		"banRate": 0.0008074175061610633,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 62,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 62,
+		"winRate": 0.5302564102564102,
+		"playRate": 0.013457051303186984,
+		"gamesPlayed": 2925,
+		"percentRolePlayed": 0.48291233283803864,
+		"banRate": 0.0009086322362781197,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 427,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 427,
+		"winRate": 0.504270462633452,
+		"playRate": 0.012927970653659974,
+		"gamesPlayed": 2810,
+		"percentRolePlayed": 0.9770514603616134,
+		"banRate": 0.0005620484634530479,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 163,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 163,
+		"winRate": 0.46526009457984724,
+		"playRate": 0.012647327874345646,
+		"gamesPlayed": 2749,
+		"percentRolePlayed": 0.6508049242424242,
+		"banRate": 0.0002507364905172533,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 43,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 43,
+		"winRate": 0.49635036496350365,
+		"playRate": 0.012605921562643533,
+		"gamesPlayed": 2740,
+		"percentRolePlayed": 0.15228990662516675,
+		"banRate": 0.00131195760022942,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 79,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 79,
+		"winRate": 0.4518142801404604,
+		"playRate": 0.011791597432501962,
+		"gamesPlayed": 2563,
+		"percentRolePlayed": 0.6210322267991277,
+		"banRate": 0.00028217439911421775,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 78,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 78,
+		"winRate": 0.48278560250391234,
+		"playRate": 0.011759392523400318,
+		"gamesPlayed": 2556,
+		"percentRolePlayed": 0.579460439809567,
+		"banRate": 0.00042019448563747645,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 57,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 57,
+		"winRate": 0.499803536345776,
+		"playRate": 0.011708784809097735,
+		"gamesPlayed": 2545,
+		"percentRolePlayed": 0.603366524419156,
+		"banRate": 0.00039182369007436215,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 127,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 127,
+		"winRate": 0.4847765915381574,
+		"playRate": 0.011635173588293976,
+		"gamesPlayed": 2529,
+		"percentRolePlayed": 0.5921329899321002,
+		"banRate": 0.0002967431860250062,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 9,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 9,
+		"winRate": 0.5087301587301587,
+		"playRate": 0.011593767276591862,
+		"gamesPlayed": 2520,
+		"percentRolePlayed": 0.3445918227813483,
+		"banRate": 0.0014062713260203136,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 161,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 161,
+		"winRate": 0.5105619768832204,
+		"playRate": 0.011543159562289278,
+		"gamesPlayed": 2509,
+		"percentRolePlayed": 0.44956101057158215,
+		"banRate": 0.0003450502163081467,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 421,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 421,
+		"winRate": 0.4797432811873245,
+		"playRate": 0.011469548341485522,
+		"gamesPlayed": 2493,
+		"percentRolePlayed": 0.9826566811194324,
+		"banRate": 0.00036038578147739767,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 112,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 112,
+		"winRate": 0.4764801297648013,
+		"playRate": 0.01134532940637918,
+		"gamesPlayed": 2466,
+		"percentRolePlayed": 0.7409855769230769,
+		"banRate": 0.0001541224299509722,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 1,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 1,
+		"winRate": 0.513163393230255,
+		"playRate": 0.011009478211462035,
+		"gamesPlayed": 2393,
+		"percentRolePlayed": 0.5653201039451925,
+		"banRate": 0.0008166188452626139,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 30,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 30,
+		"winRate": 0.504047720494248,
+		"playRate": 0.01079784595165123,
+		"gamesPlayed": 2347,
+		"percentRolePlayed": 0.5744003915810083,
+		"banRate": 0.000476936076763705,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 268,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 268,
+		"winRate": 0.4384980578334053,
+		"playRate": 0.010659824912644184,
+		"gamesPlayed": 2317,
+		"percentRolePlayed": 0.7364907819453274,
+		"banRate": 0.001225311657023152,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 48,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 48,
+		"winRate": 0.476107732406603,
+		"playRate": 0.010590814393140661,
+		"gamesPlayed": 2302,
+		"percentRolePlayed": 0.15715456034953576,
+		"banRate": 0.004578432981279875,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 29,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 29,
+		"winRate": 0.4763572679509632,
+		"playRate": 0.010508001769736434,
+		"gamesPlayed": 2284,
+		"percentRolePlayed": 0.23204307629787665,
+		"banRate": 0.002597077961412651,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 63,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 63,
+		"winRate": 0.5043936731107206,
+		"playRate": 0.010471196159334555,
+		"gamesPlayed": 2276,
+		"percentRolePlayed": 0.1877423080095686,
+		"banRate": 0.009316355840319961,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 161,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 161,
+		"winRate": 0.5033083370092634,
+		"playRate": 0.010429789847632442,
+		"gamesPlayed": 2267,
+		"percentRolePlayed": 0.4061996058054112,
+		"banRate": 0.0003450502163081467,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 42,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 42,
+		"winRate": 0.47703180212014135,
+		"playRate": 0.010415987743731737,
+		"gamesPlayed": 2264,
+		"percentRolePlayed": 0.6382858753876516,
+		"banRate": 0.0002921425164742309,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 3,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 3,
+		"winRate": 0.47519929140832595,
+		"playRate": 0.010388383535930327,
+		"gamesPlayed": 2258,
+		"percentRolePlayed": 0.5628115653040877,
+		"banRate": 0.0007560433628440726,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 266,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 266,
+		"winRate": 0.4983981693363844,
+		"playRate": 0.010052532341013182,
+		"gamesPlayed": 2185,
+		"percentRolePlayed": 0.5360647693817469,
+		"banRate": 0.002033495941442678,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 142,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 142,
+		"winRate": 0.5293577981651376,
+		"playRate": 0.010029528834512007,
+		"gamesPlayed": 2180,
+		"percentRolePlayed": 0.13700351935646055,
+		"banRate": 0.017637433501155535,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 133,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 133,
+		"winRate": 0.5302820157189089,
+		"playRate": 0.009951316912408015,
+		"gamesPlayed": 2163,
+		"percentRolePlayed": 0.5039608574091333,
+		"banRate": 0.0007836473801487243,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 115,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 115,
+		"winRate": 0.5009407337723424,
+		"playRate": 0.009781090964299325,
+		"gamesPlayed": 2126,
+		"percentRolePlayed": 0.6531490015360983,
+		"banRate": 0.00012421807787093281,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 126,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 126,
+		"winRate": 0.48539114043355325,
+		"playRate": 0.009762688159098386,
+		"gamesPlayed": 2122,
+		"percentRolePlayed": 0.5343742130445731,
+		"banRate": 0.0011486338311768973,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 85,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 85,
+		"winRate": 0.49833412660637794,
+		"playRate": 0.009666073431793454,
+		"gamesPlayed": 2101,
+		"percentRolePlayed": 0.5385798513201743,
+		"banRate": 0.0006233907241300517,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 83,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 83,
+		"winRate": 0.5009523809523809,
+		"playRate": 0.009661472730493219,
+		"gamesPlayed": 2100,
+		"percentRolePlayed": 0.724387719903415,
+		"banRate": 0.0008664594320626796,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 80,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 80,
+		"winRate": 0.5183574879227053,
+		"playRate": 0.009523451691486173,
+		"gamesPlayed": 2070,
+		"percentRolePlayed": 0.4471808165910564,
+		"banRate": 0.0025963111831541884,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 98,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 98,
+		"winRate": 0.4544088176352705,
+		"playRate": 0.009182999795268793,
+		"gamesPlayed": 1996,
+		"percentRolePlayed": 0.21881166410874808,
+		"banRate": 0.000602687711151563,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 245,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 245,
+		"winRate": 0.4997491219267436,
+		"playRate": 0.009169197691368088,
+		"gamesPlayed": 1993,
+		"percentRolePlayed": 0.1720773614228976,
+		"banRate": 0.0023831468273016,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 7,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 7,
+		"winRate": 0.5349434737923947,
+		"playRate": 0.00895296473025705,
+		"gamesPlayed": 1946,
+		"percentRolePlayed": 0.1229933004677032,
+		"banRate": 0.044621893972969534,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 62,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 62,
+		"winRate": 0.5413223140495868,
+		"playRate": 0.0089069577172547,
+		"gamesPlayed": 1936,
+		"percentRolePlayed": 0.31963017995707443,
+		"banRate": 0.0009086322362781197,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 101,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 101,
+		"winRate": 0.5218609865470852,
+		"playRate": 0.008207651119619,
+		"gamesPlayed": 1784,
+		"percentRolePlayed": 0.2446852283637361,
+		"banRate": 0.0010819241226906555,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 54,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 54,
+		"winRate": 0.48842592592592593,
+		"playRate": 0.00795001184680585,
+		"gamesPlayed": 1728,
+		"percentRolePlayed": 0.1730249324121358,
+		"banRate": 0.0020986720934119945,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 68,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 68,
+		"winRate": 0.4586728754365541,
+		"playRate": 0.0079040048338035,
+		"gamesPlayed": 1718,
+		"percentRolePlayed": 0.6281535648994515,
+		"banRate": 0.0003036441903511691,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 23,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 23,
+		"winRate": 0.5148279952550415,
+		"playRate": 0.007756782392195984,
+		"gamesPlayed": 1686,
+		"percentRolePlayed": 0.21527068437180796,
+		"banRate": 0.004920416084554172,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 429,
+			"role": "DUO_CARRY"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 429,
+		"winRate": 0.44477611940298506,
+		"playRate": 0.007706174677893401,
+		"gamesPlayed": 1675,
+		"percentRolePlayed": 0.7679963319578175,
+		"banRate": 0.00023080025579722701,
+		"role": "DUO_CARRY"
+	},
+	{
+		"_id": {
+			"championId": 27,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 27,
+		"winRate": 0.5218170950388523,
+		"playRate": 0.007696973275292931,
+		"gamesPlayed": 1673,
+		"percentRolePlayed": 0.17816826411075612,
+		"banRate": 0.00389369999647282,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 107,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 107,
+		"winRate": 0.4885204081632653,
+		"playRate": 0.00721389963876827,
+		"gamesPlayed": 1568,
+		"percentRolePlayed": 0.13291514791896245,
+		"banRate": 0.010038660959791681,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 14,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 14,
+		"winRate": 0.5026246719160105,
+		"playRate": 0.007011468781557935,
+		"gamesPlayed": 1524,
+		"percentRolePlayed": 0.18323914873151376,
+		"banRate": 0.0024828280009017312,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 84,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 84,
+		"winRate": 0.48588709677419356,
+		"playRate": 0.006845843534749481,
+		"gamesPlayed": 1488,
+		"percentRolePlayed": 0.409353507565337,
+		"banRate": 0.0021400781193689723,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 92,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 92,
+		"winRate": 0.4942450914014895,
+		"playRate": 0.006795235820446897,
+		"gamesPlayed": 1477,
+		"percentRolePlayed": 0.12055174665360757,
+		"banRate": 0.003230436802902716,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 10,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 10,
+		"winRate": 0.503785271851342,
+		"playRate": 0.0066848189892412604,
+		"gamesPlayed": 1453,
+		"percentRolePlayed": 0.46916370681304487,
+		"banRate": 0.00035348477715123474,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 45,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 45,
+		"winRate": 0.476356050069541,
+		"playRate": 0.006615808469737737,
+		"gamesPlayed": 1438,
+		"percentRolePlayed": 0.19655549480590487,
+		"banRate": 0.0018625043898055297,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 106,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 106,
+		"winRate": 0.5066109951287404,
+		"playRate": 0.006611207768437502,
+		"gamesPlayed": 1437,
+		"percentRolePlayed": 0.5143163922691482,
+		"banRate": 0.0004554662855267537,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 17,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 17,
+		"winRate": 0.44787922358015814,
+		"playRate": 0.006399575508626698,
+		"gamesPlayed": 1391,
+		"percentRolePlayed": 0.1689336895797911,
+		"banRate": 0.005958633846512462,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 80,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 80,
+		"winRate": 0.5037707390648567,
+		"playRate": 0.006100529924111433,
+		"gamesPlayed": 1326,
+		"percentRolePlayed": 0.2864549578742709,
+		"banRate": 0.0025963111831541884,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 21,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 21,
+		"winRate": 0.473807662236122,
+		"playRate": 0.005884296963000394,
+		"gamesPlayed": 1279,
+		"percentRolePlayed": 0.1334794406178251,
+		"banRate": 0.0008212195148133892,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 84,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 84,
+		"winRate": 0.4778368794326241,
+		"playRate": 0.005189591066664929,
+		"gamesPlayed": 1128,
+		"percentRolePlayed": 0.31031636863823936,
+		"banRate": 0.0021400781193689723,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 50,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 50,
+		"winRate": 0.5533272561531449,
+		"playRate": 0.005046969326357648,
+		"gamesPlayed": 1097,
+		"percentRolePlayed": 0.11137055837563452,
+		"banRate": 0.008238265608921618,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 131,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 131,
+		"winRate": 0.45428840716305374,
+		"playRate": 0.004881344079549193,
+		"gamesPlayed": 1061,
+		"percentRolePlayed": 0.17146089204912734,
+		"banRate": 0.00222672406257524,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 26,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 26,
+		"winRate": 0.5342205323193916,
+		"playRate": 0.004839937767847079,
+		"gamesPlayed": 1052,
+		"percentRolePlayed": 0.19678264122708566,
+		"banRate": 0.0006532950762100911,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 516,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 516,
+		"winRate": 0.5205205205205206,
+		"playRate": 0.004596100598934631,
+		"gamesPlayed": 999,
+		"percentRolePlayed": 0.11059448688143474,
+		"banRate": 0.002301101553646107,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 55,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 55,
+		"winRate": 0.5448979591836735,
+		"playRate": 0.004508687274230169,
+		"gamesPlayed": 980,
+		"percentRolePlayed": 0.11101042138649751,
+		"banRate": 0.014918437796647338,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 1,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 1,
+		"winRate": 0.4490644490644491,
+		"playRate": 0.0044258746508259415,
+		"gamesPlayed": 962,
+		"percentRolePlayed": 0.2272619891330026,
+		"banRate": 0.0008166188452626139,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 106,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 106,
+		"winRate": 0.5123258306538049,
+		"playRate": 0.00429245431311913,
+		"gamesPlayed": 933,
+		"percentRolePlayed": 0.3339298496778812,
+		"banRate": 0.0004554662855267537,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 74,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 74,
+		"winRate": 0.4967811158798283,
+		"playRate": 0.004287853611818895,
+		"gamesPlayed": 932,
+		"percentRolePlayed": 0.3459539717891611,
+		"banRate": 0.00044166427687442777,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 266,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 266,
+		"winRate": 0.5541125541125541,
+		"playRate": 0.004251048001417016,
+		"gamesPlayed": 924,
+		"percentRolePlayed": 0.2266928361138371,
+		"banRate": 0.002033495941442678,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 82,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 82,
+		"winRate": 0.4811111111111111,
+		"playRate": 0.004140631170211379,
+		"gamesPlayed": 900,
+		"percentRolePlayed": 0.47568710359408034,
+		"banRate": 0.0002906089599573058,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 2,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 2,
+		"winRate": 0.4875283446712018,
+		"playRate": 0.004057818546807152,
+		"gamesPlayed": 882,
+		"percentRolePlayed": 0.17945066124109868,
+		"banRate": 0.0012973888133186316,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 223,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 223,
+		"winRate": 0.4515011547344111,
+		"playRate": 0.003984207326003394,
+		"gamesPlayed": 866,
+		"percentRolePlayed": 0.1359497645211931,
+		"banRate": 0.002860082904065305,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 74,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 74,
+		"winRate": 0.4794520547945205,
+		"playRate": 0.0036943631440885974,
+		"gamesPlayed": 803,
+		"percentRolePlayed": 0.29806978470675577,
+		"banRate": 0.00044166427687442777,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 31,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 31,
+		"winRate": 0.47244094488188976,
+		"playRate": 0.0035057343907789677,
+		"gamesPlayed": 762,
+		"percentRolePlayed": 0.11166471277842907,
+		"banRate": 0.0027956735303544507,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 78,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 78,
+		"winRate": 0.5,
+		"playRate": 0.00344132457257568,
+		"gamesPlayed": 748,
+		"percentRolePlayed": 0.16957605985037408,
+		"banRate": 0.00042019448563747645,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 126,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 126,
+		"winRate": 0.47701149425287354,
+		"playRate": 0.003202088104963467,
+		"gamesPlayed": 696,
+		"percentRolePlayed": 0.17527071266683455,
+		"banRate": 0.0011486338311768973,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 111,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 111,
+		"winRate": 0.5205882352941177,
+		"playRate": 0.003128476884159709,
+		"gamesPlayed": 680,
+		"percentRolePlayed": 0.15308419630796938,
+		"banRate": 0.00020166268197565018,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 57,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 57,
+		"winRate": 0.4946564885496183,
+		"playRate": 0.003013459351653837,
+		"gamesPlayed": 655,
+		"percentRolePlayed": 0.1552868658131816,
+		"banRate": 0.00039182369007436215,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 78,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 78,
+		"winRate": 0.5498392282958199,
+		"playRate": 0.0028616362087460867,
+		"gamesPlayed": 622,
+		"percentRolePlayed": 0.141011108592156,
+		"banRate": 0.00042019448563747645,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 133,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 133,
+		"winRate": 0.5577235772357724,
+		"playRate": 0.0028294312996444424,
+		"gamesPlayed": 615,
+		"percentRolePlayed": 0.14328984156570362,
+		"banRate": 0.0007836473801487243,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 79,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 79,
+		"winRate": 0.5139573070607554,
+		"playRate": 0.0028018270918430334,
+		"gamesPlayed": 609,
+		"percentRolePlayed": 0.14756481705839594,
+		"banRate": 0.00028217439911421775,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 57,
+			"role": "JUNGLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 57,
+		"winRate": 0.4965156794425087,
+		"playRate": 0.002640802546334813,
+		"gamesPlayed": 574,
+		"percentRolePlayed": 0.13608345187292556,
+		"banRate": 0.00039182369007436215,
+		"role": "JUNGLE"
+	},
+	{
+		"_id": {
+			"championId": 10,
+			"role": "MIDDLE"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 10,
+		"winRate": 0.5109090909090909,
+		"playRate": 0.0025303857151291764,
+		"gamesPlayed": 550,
+		"percentRolePlayed": 0.17759121730707136,
+		"banRate": 0.00035348477715123474,
+		"role": "MIDDLE"
+	},
+	{
+		"_id": {
+			"championId": 127,
+			"role": "TOP"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 127,
+		"winRate": 0.5100548446069469,
+		"playRate": 0.0025165836112284717,
+		"gamesPlayed": 547,
+		"percentRolePlayed": 0.12807305080777334,
+		"banRate": 0.0002967431860250062,
+		"role": "TOP"
+	},
+	{
+		"_id": {
+			"championId": 3,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 3,
+		"winRate": 0.425891181988743,
+		"playRate": 0.0024521737930251835,
+		"gamesPlayed": 533,
+		"percentRolePlayed": 0.13285144566301096,
+		"banRate": 0.0007560433628440726,
+		"role": "DUO_SUPPORT"
+	},
+	{
+		"_id": {
+			"championId": 85,
+			"role": "DUO_SUPPORT"
+		},
+		"elo": "PLATINUM,DIAMOND,MASTER,CHALLENGER",
+		"patch": "8.10",
+		"championId": 85,
+		"winRate": 0.5143953934740882,
+		"playRate": 0.002396965377422365,
+		"gamesPlayed": 521,
+		"percentRolePlayed": 0.1335554985901051,
+		"banRate": 0.0006233907241300517,
+		"role": "DUO_SUPPORT"
+	}
+]
