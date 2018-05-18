@@ -24,13 +24,31 @@ foreach (array_keys($elos) as $elo) {
 	$elos[$elo] = $champions;
 }
 
-$pdo = new PDO('sqlite:' . __DIR__ . '/champions.db');
+// TODO: grab champions dynamically from the static data site
+$static_champions = json_decode(file_get_contents(__DIR__ . '/riot.json'), true);
+$champ_names = [];
+foreach ($static_champions['data'] as $champ) {
+	$champ_names[$champ['id']] = $champ['name'];
+}
 
-foreach ($elos as $elo => $champion) {
-	$pdo->prepare("INSERT INTO champions (
-		id, winRate, playRate, name, elo
-	)
-	VALUES (
-		:id, :winRate, :playRate, :name, :elo
-	)");
+// spin up our DB
+$pdo = new PDO('sqlite:' . __DIR__ . '/champions.db');
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+foreach ($elos as $elo => $champions) {
+	foreach ($champions as $champion) {
+		$statement = $pdo->prepare("INSERT INTO champions (
+			id, winRate, playRate, name, elo
+		)
+		VALUES (
+			:id, :winRate, :playRate, :name, :elo
+		)");
+	
+		$statement->execute([
+			':id'       => $champion['championId'],
+			':winRate'  => $champion['winRate'],
+			':playRate' => $champion['playRate'],
+			':name'     => $champ_names[$champion['championId']],
+			':elo'      => $champion['elo'],
+		]);
+	}
 }
