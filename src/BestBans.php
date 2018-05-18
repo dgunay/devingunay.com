@@ -7,14 +7,17 @@ class BestBans
 
 	protected $champions = array();
 
-	public function __construct(string $key) {
+	protected $db;
+
+	public function __construct(string $key, PDO $db = null) {
 		$this->key = $key;
+		$this->db = $db;
 	}
 
 	public function get_champions(string $elo = null) {
 		$params = [
 			'limit'     => 1000, 
-			'champData' => 'elo,playRate,winRate,name', // all we care about
+			'champData' => 'elo,playRate,winRate', // all we care about
 			'api_key'   => $this->key
 		];
 
@@ -44,7 +47,37 @@ class BestBans
 		return json_encode($this->champions);
 	}
 
-	public function best_bans(string $elo = null) {
-		// 
+	public function best_bans(string $elo = null, int $limit = 5) {
+		if ($this->db === null) {
+			throw new Exception('Database cannot be null.');
+		}
+
+		$elos = ['BRONZE','SILVER','GOLD','PLATINUM'];
+
+		// optionally filter by one elo
+		if ($elo) {
+			$elos = array_filter($elos, function ($a) use ($elo) {
+				return strcasecmp($a, $elo) === 0;
+			});
+		}
+
+		print_r($elos); exit;
+		
+		$top_bans = [];
+		foreach ($elos as $elo) {
+			// select the top N 
+			$statement = $this->db->query(
+				"SELECT * 
+				FROM champions
+				WHERE elo = '{$elo}'
+				ORDER BY banValue DESC
+				LIMIT {$limit}
+				"
+			);
+
+			$top_bans[$elo] = $statement->fetchAll(PDO::FETCH_ASSOC);
+		}
+
+		return $top_bans;
 	}
 }
