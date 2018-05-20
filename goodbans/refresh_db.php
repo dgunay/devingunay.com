@@ -14,11 +14,10 @@ use GoodBans\ChampionGG;
 use GoodBans\RiotChampions;
 use GoodBans\ChampionsDatabaseRefresher;
 
-
 $db = new ChampionsDatabaseRefresher(
 	new \PDO('sqlite:' . __DIR__ . '/champions.db'),
 	new ChampionGG($GLOBALS['champion.gg_key']),
-	new RiotChampions(json_decode(file_get_contents(__DIR__ . '/riot.json'), true))
+	new RiotChampions('latest')
 );
 
 $db->refresh();

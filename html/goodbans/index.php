@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <?php
-	ini_set('display_errors', 1);
+	// ini_set('display_errors', 1);
 	require_once(__DIR__ . '/../../config.php');
 	require_once($GLOBALS['project_root'] . '/goodbans/vendor/autoload.php');
 	use GoodBans\GoodBansView;
@@ -35,7 +35,7 @@
 				<div class="col-md">
 					<p class="lead">A basic reimplementation of 
 					<a href="http://BestBans.com">BestBans.com</a>,
-					which has been out of service since January 2017</p>
+					which has been out of service since January 2017.</p>
 				</div>
 			</div>
 		</div>

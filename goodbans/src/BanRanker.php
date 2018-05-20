@@ -43,7 +43,7 @@ class BanRanker
 			$top_bans[$elo] = $statement->fetchAll(\PDO::FETCH_ASSOC);
 		}
 
-		// TODO: most common value for patch column
+		// Determine the patch we're on
 		$statement = $this->db->query(
 			"SELECT  patch
 			FROM     champions
