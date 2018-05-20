@@ -8,6 +8,8 @@ html/projects
 html/img
 *.md
 
+# composer
+/vendor/
 # Site configuration stuff
 sitemap.xml
 config.php

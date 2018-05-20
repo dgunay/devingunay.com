@@ -44,7 +44,7 @@
 	<div class="container">
 		<?php
 			$ranker = new BanRanker(
-				new \PDO('sqlite:' . $GLOBALS['project_root'] . '/GoodBans/champions.db')
+				new \PDO('sqlite:' . $GLOBALS['project_root'] . '/goodbans/champions.db')
 			);
 			$bans = $ranker->best_bans();
 			$view = new GoodBansView($bans);
