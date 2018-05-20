@@ -3,9 +3,9 @@
 <?php
 	ini_set('display_errors', 1);
 	require_once(__DIR__ . '/../../config.php');
-	require_once($GLOBALS['project_root'] . '/vendor/autoload.php');
-	use BestBans\BestBansView;
-	use BestBans\BanRanker;
+	require_once($GLOBALS['project_root'] . '/goodbans/vendor/autoload.php');
+	use GoodBans\GoodBansView;
+	use GoodBans\BanRanker;
 ?>	
 <head>
 	<!-- required meta tags -->
@@ -28,13 +28,13 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md">
-					<h1 class="display-2"> Best Bans </h1>
+					<h1 class="display-2"> Good Bans </h1>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md">
 					<p class="lead">A basic reimplementation of 
-					<a href="http://bestbans.com">bestbans.com</a>,
+					<a href="http://BestBans.com">BestBans.com</a>,
 					which has been out of service since January 2017</p>
 				</div>
 			</div>
@@ -43,13 +43,11 @@
 
 	<div class="container">
 		<?php
-			// TODO: get the view
 			$ranker = new BanRanker(
-				$GLOBALS['champion.gg_key'],
-				new \PDO('sqlite:' . $GLOBALS['project_root'] . '/champions.db')
+				new \PDO('sqlite:' . $GLOBALS['project_root'] . '/GoodBans/champions.db')
 			);
 			$bans = $ranker->best_bans();
-			$view = new BestBansView($bans);
+			$view = new GoodBansView($bans);
 			echo $view->render();
 		?>
 	</div>

@@ -9,7 +9,7 @@
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/config.php';
 
-use BestBans\BanRanker;
+use GoodBans\BanRanker;
 $pdo = new \PDO('sqlite:' . __DIR__ . '/champions.db');
 $bb = new BanRanker(
 	$GLOBALS['champion.gg_key'], $pdo
@@ -17,12 +17,12 @@ $bb = new BanRanker(
 
 // get champs for all elos
 $elos = [
-	'bronze' => [],
-	'silver' => [],
-	'gold' => [],
-	'platinum' => [],
-	'diamond' => [],
-	'master' => [],
+	'bronze'     => [],
+	'silver'     => [],
+	'gold'       => [],
+	'platinum'   => [],
+	'diamond'    => [],
+	'master'     => [],
 	'challenger' => [],
 ];
 
