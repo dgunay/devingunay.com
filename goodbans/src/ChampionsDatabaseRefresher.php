@@ -49,7 +49,7 @@ class ChampionsDatabaseRefresher
 		$this->db->query(
 			"CREATE TABLE IF NOT EXISTS champions (
 				id TEXT, winRate REAL, playRate REAL, `name` TEXT, elo TEXT, 
-				banValue REAL, adjustedPickRate REAL, `patch` TEXT
+				banValue REAL, adjustedPickRate REAL, `patch` TEXT, img TEXT
 			)"
 		);
 
@@ -57,6 +57,7 @@ class ChampionsDatabaseRefresher
 		echo 'Clearing database...' . PHP_EOL;
 		$this->db->query("DELETE FROM champions");
 
+		$img_urls = $this->riot_champions->getImageUrls();
 		// spin up our DB and insert our champions, one row per elo
 		echo 'Populating database...' . PHP_EOL;
 		foreach ($elos as $elo => $champions) {
@@ -68,10 +69,10 @@ class ChampionsDatabaseRefresher
 
 				// Bind our values for protection against SQL injection
 				$statement = $this->db->prepare("INSERT INTO champions (
-					id, winRate, playRate, name, elo, banValue, adjustedPickRate, patch
+					id, winRate, playRate, name, elo, banValue, adjustedPickRate, patch, img
 				)
 				VALUES (
-					:id, :winRate, :playRate, :name, :elo, :banValue, :adjustedPickRate, :patch
+					:id, :winRate, :playRate, :name, :elo, :banValue, :adjustedPickRate, :patch, :img
 				)");
 
 				$statement->execute([
@@ -83,12 +84,21 @@ class ChampionsDatabaseRefresher
 					':adjustedPickRate' => $champion->adjustedPickRate(),
 					':banValue'         => $champion->banValue(),
 					':patch'            => $champion->getPatch(),
+					':img'              => $img_urls[$champion->getId()],
 				]);
 			}
 		}
 	}
 
-	private function aggregate_champs(array $champion_gg_data) {
+	/**
+	 * Aggregates champion data for all roles. For example, a champion played in
+	 * mid and top will have their mid and top winrate and banrate averaged, and
+	 * their play rates summed.
+	 *
+	 * @param array $champion_gg_data
+	 * @return array
+	 */
+	private function aggregate_champs(array $champion_gg_data) : array {
 		$champions = [];
 		foreach ($champion_gg_data as $champion) {
 			if (is_array($champion['winRate'])) {

@@ -2,6 +2,8 @@
 
 namespace GoodBans;
 
+use GoodBans\RiotChampions;
+
 class GoodBansView
 {
 	protected $bans;
@@ -31,12 +33,16 @@ class GoodBansView
 				</h4>
 			</div>';
 
+			$text .= '<hr class="hr-primary" style="background-color:black;">';
+
 			// the champions
 			$text .= '<div class="row justify-content-md-left">';
 			foreach ($top_bans as $index => $champion) {
-				$text .= '<div class="col-md-2">
-					' . ($index + 1) . ': ' . $champion['name'] . '
-				</div>';
+				$text .= '<div class="col-md-2"> '
+					// . ($index + 1) . ': ' . $champion['name']
+					. '<h4>' . ($index + 1) . '.</h4>'
+					. "<img src=\"{$champion['img']}\" class=\"img-fluid\" style=\"max-width: 50%;\">"
+				. '</div>';
 			}
 			$text .= '</div>';
 		}
