@@ -3,7 +3,7 @@
 <?php
 	ini_set('display_errors', 1);
 	require_once(__DIR__ . '/../../config.php');
-	require_once($GLOBALS['project_root'] . '/vendor/autoload.php');
+	require_once($GLOBALS['project_root'] . '/bestbans/vendor/autoload.php');
 	use BestBans\BestBansView;
 	use BestBans\BanRanker;
 ?>	
@@ -45,8 +45,7 @@
 		<?php
 			// TODO: get the view
 			$ranker = new BanRanker(
-				$GLOBALS['champion.gg_key'],
-				new \PDO('sqlite:' . $GLOBALS['project_root'] . '/champions.db')
+				new \PDO('sqlite:' . $GLOBALS['project_root'] . '/bestbans/champions.db')
 			);
 			$bans = $ranker->best_bans();
 			$view = new BestBansView($bans);

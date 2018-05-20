@@ -1,13 +1,19 @@
+# Folders for personal data/assets
 html/side_projects
-html/cv_site
-*.md
 html/blog/posts/*.md
 html/blog/tmp
 html/blog/*.json
+html/cv_site
 html/projects
+html/img
+*.md
+
+# Site configuration stuff
 sitemap.xml
 config.php
 test.php
-html/img
-/vendor/
+
+# BestBans stuff
+bestbans/vendor/
 *.db
+bestbans/current_patch.txt
