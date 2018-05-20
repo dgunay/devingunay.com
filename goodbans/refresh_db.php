@@ -9,10 +9,10 @@
 require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/../config.php';
 
-use BestBans\BanRanker;
-use BestBans\ChampionGG;
-use BestBans\RiotChampions;
-use BestBans\ChampionsDatabaseRefresher;
+use GoodBans\BanRanker;
+use GoodBans\ChampionGG;
+use GoodBans\RiotChampions;
+use GoodBans\ChampionsDatabaseRefresher;
 
 
 $db = new ChampionsDatabaseRefresher(
@@ -22,7 +22,3 @@ $db = new ChampionsDatabaseRefresher(
 );
 
 $db->refresh();
-
-$ban_ranker = new BanRanker($db->pdo());
-
-$best_bans = $ban_ranker->best_bans();

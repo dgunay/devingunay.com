@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace BestBans;
+namespace GoodBans;
 
 // TODO: use an API to get win% pick% per-elo
 class BanRanker

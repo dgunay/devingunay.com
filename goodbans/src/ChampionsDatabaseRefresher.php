@@ -1,10 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace BestBans;
+namespace GoodBans;
 
-use BestBans\ChampionsGG;
-use BestBans\RiotChampions;
-use BestBans\Champion;
+use GoodBans\ChampionsGG;
+use GoodBans\RiotChampions;
+use GoodBans\Champion;
 
 class ChampionsDatabaseRefresher
 {

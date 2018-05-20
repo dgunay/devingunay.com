@@ -1,6 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-namespace BestBans;
+namespace GoodBans;
 
 class Champion
 {
@@ -17,7 +17,7 @@ class Champion
 	private $adjustedPickRate = null;
 
 	public function __construct(array $champion_gg, string $name) {
-		$this->id       = $champion_gg['championId'];
+		$this->id       = (string) $champion_gg['championId'];
 		$this->winRate  = (float) $champion_gg['winRate'];
 		$this->playRate = (float) $champion_gg['playRate'];
 		$this->banRate  = (float) $champion_gg['banRate'];

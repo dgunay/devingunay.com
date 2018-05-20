@@ -1,21 +1,19 @@
 <?php
 
 /**
- * Repopulates the database with champions for later querying.
+ * Populates the database with champions for later querying.
  * 
  * @author Devin Gunay <devingunay@gmail.com>
  */
 
 require __DIR__ . '/vendor/autoload.php';
-require __DIR__ . '/../config.php';
+require __DIR__ . '/config.php';
 
-use BestBans\BanRanker;
-use BestBans\ChampionGG;
-use BestBans\ChampionsDatabaseRefresher;
-
-$champion_gg = new ChampionGG($GLOBALS['champion.gg_key']);
-$db = new ChampionsDatabaseRefresher(new \PDO('sqlite:' . __DIR__ . '/champions.db'));
-$bb = new BanRanker($GLOBALS['champion.gg_key'], $pdo);
+use GoodBans\BanRanker;
+$pdo = new \PDO('sqlite:' . __DIR__ . '/champions.db');
+$bb = new BanRanker(
+	$GLOBALS['champion.gg_key'], $pdo
+);
 
 // get champs for all elos
 $elos = [
@@ -30,33 +28,18 @@ $elos = [
 
 foreach (array_keys($elos) as $elo) {
 	echo "getting $elo..." . PHP_EOL;
-	$champions = $champion_gg->get_champions($elo);
+	$champions = $bb->get_champions($elo);
 	$elos[$elo] = $champions;
 }
 
-$patch = $champion_gg->get_patch();
-
 // TODO: grab champions dynamically from the static data site
-// Map champion ID to name
-if (file_exists(__DIR__ . '/riot.json')) {
-	$static_champions = json_decode(file_get_contents(__DIR__ . '/riot.json'), true);
-	$champ_names = [];
-	foreach ($static_champions['data'] as $champ) {
-		$champ_names[$champ['id']] = $champ['name'];
-	}
+$static_champions = json_decode(file_get_contents(__DIR__ . '/riot.json'), true);
+$champ_names = [];
+foreach ($static_champions['data'] as $champ) {
+	$champ_names[$champ['id']] = $champ['name'];
 }
-else {
-	echo 'Dynamic champion name querying pending Riot API access.';
-	exit(1);
-}
-
-
-// flush champs in the database
-echo 'Clearing database...' . PHP_EOL;
-$pdo->query("DELETE FROM champions");
 
 // spin up our DB and insert our champions, one row per elo
-echo 'Populating database...' . PHP_EOL;
 foreach ($elos as $elo => $champions) {
 	foreach ($champions as $champion) {
 		$statement = $pdo->prepare("INSERT INTO champions (
@@ -78,5 +61,3 @@ foreach ($elos as $elo => $champions) {
 		]);
 	}
 }
-
-file_put_contents(__DIR__ . '/current_patch.txt', $patch);

@@ -1,3 +1,0 @@
-make view prettier
-update champions every day
-aggregate roles for each champ

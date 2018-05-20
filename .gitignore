@@ -13,7 +13,7 @@ sitemap.xml
 config.php
 test.php
 
-# BestBans stuff
-bestbans/vendor/
+# GoodBans stuff
+GoodBans/vendor/
 *.db
-bestbans/current_patch.txt
+GoodBans/current_patch.txt
