@@ -20,6 +20,7 @@
       $archive_by_year = get_archive_by_year();
       foreach ($archive_by_year as $year => $months) {
         echo '<li><b>' . $year . '</b></li>' . PHP_EOL;
+        ksort($months);
         foreach ($months as $month => $posts) {
           echo '<li><a href="/blog/archive?m='.$month.'&y='.$year.'">' 
             . date('F', mktime(0,0,0,$month)) 

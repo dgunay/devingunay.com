@@ -2,7 +2,7 @@
 
 $pages = array(
     '/'         => 'Home',
-    '/projects' => 'Projects',
+    '/goodbans' => 'Good Bans',
     '/hobbies'  => 'Hobbies',
     '/about'    => 'About',
     '/blog'     => 'Blog',
