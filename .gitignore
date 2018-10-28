@@ -1,4 +1,5 @@
 # Folders for personal data/assets
+# Site assets
 html/side_projects
 html/blog/posts/*.md
 html/blog/tmp
@@ -8,13 +9,15 @@ html/projects
 html/img
 *.md
 
+# composer
+/vendor/
+
 # Site configuration stuff
 sitemap.xml
 config.php
 test.php
 
 # GoodBans stuff
-GoodBans/vendor/
 *.db
-GoodBans/current_patch.txt
+
 /vendor/
