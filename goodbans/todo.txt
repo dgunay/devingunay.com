@@ -1,3 +1,0 @@
-make view prettier
-update champions every day
-cache champ images https://developer.riotgames.com/static-data.html
