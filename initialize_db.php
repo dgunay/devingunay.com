@@ -8,7 +8,7 @@ use GoodBans\Lolalytics;
 
 $db = new ChampionsDatabase(
 	new \PDO('sqlite:'.__DIR__.'/champions.db'),
-	// new OpGG(),
+	//new OpGG(),
 	new Lolalytics(),
 	new RiotChampions()
 );
