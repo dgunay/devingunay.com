@@ -12,3 +12,12 @@ frontPage:
 hobbies:
   path: /hobbies
   controller: App\Controller\HobbiesController::hobbies
+
+blog:
+  path: /blog
+  controller: App\Controller\BlogController::blogFront
+
+# TODO: make this wildcarded or something so it can load any post
+# blogPost:
+#   path: /blog{$asdfklsdfjlk}
+#   controller: App\Controller\BlogController::blogPost
