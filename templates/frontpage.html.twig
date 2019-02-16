@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Devin Gunay {% endblock %}
+{% block body %}
+{{ parent() }}
+
+<div class="jumbotron">
+  <div class="container">
+    <div class="row">
+      <div class="col-md">
+        <h1 class="display-2"> Devin Günay </h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-md-left align-items-center">
+    <div class="col-md-6">
+      <h2 class="display-4">
+        Developer
+      </h2>
+      <p class="lead">
+        Devin strives to deliver clean, optimal solutions with the
+        right tools for the job. He specializes in PHP but is always willing
+        to take on the next big language, framework, or paradigm.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="/img/code_crop.jpg" alt="" class="img-fluid">
+    </div>
+  </div>
+  <div class="row justify-content-md-end align-items-center">
+    <div class="col-md-6">
+      <h2 class="display-4">
+        Musician
+      </h2>
+      <p class="lead">
+        Devin is a capable jazz pianist in both solo and group settings. If
+        he doesn't know your tune, put a lead sheet in front of him and it's
+        as though he already did. Devin specializes in an authentic, pre-40s
+        stride sound when performing solo.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img src="/img/music_crop.jpg" alt="" class="img-fluid">
+    </div>
+  </div>
+</div>
+{% endblock %}

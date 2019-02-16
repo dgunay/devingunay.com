@@ -1,3 +1,10 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+# navBar:
+#   path: /navbar
+#   controller: App\Controller\NavBarController::navBar
+
+frontPage:
+  path: /
+  controller: App\Controller\FrontPageController::frontPage
