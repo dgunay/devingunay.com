@@ -15,8 +15,8 @@
   <div class="row">
     <!-- Content -->
     <div class="col-sm-8">
-    Blog post(s) go here
-    {# TODO: content eventually goes here #}
+      Blog post(s) go here
+      {# TODO: content eventually goes here #}
       {# <?php
 					require_once($GLOBALS['parsedown_path']);
 					require_once(__DIR__ . '/src/post_functions.php');
@@ -38,11 +38,11 @@
 
     <!-- Side bar -->
     <div class="col-sm-3">
-    Side bar eventually goes here
-    {# TODO: make the sidebar logic + template #}
-      {# <?php
-					include($GLOBALS['blog_root'] . '/side_bar.php');
-				?> #}
+      {% block sidebar %}
+      {# Calls the NavBarController to dynamically deactivate the current link #}
+      {# FIXME: can I pass the route as a parameter? It currently comes with a _fragment bit that is really unhelpful #}
+      {{ render(controller('App\\Controller\\SideBarController::renderSideBar')) }}
+      {% endblock %}
     </div>
   </div>
 </div>
