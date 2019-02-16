@@ -1,0 +1,56 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Devin Gunay {% endblock %}
+
+{% block body %}
+{{ parent() }}
+
+<div class="jumbotron">
+  <div class="container">
+    <h1 class="display-3">Guides </h1>
+    <p class="lead">
+      Competitive guides for Smash 4 and League of Legends.
+    </p>
+    <p class="lead">
+      No guarantees that any of my writing is current for
+      for the meta of either game!
+    </p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row" style="bottom: 20px;">
+    <h1 class="text-left display-4">Video Games</h1>
+  </div>
+  <div class="row">
+    <div class="card-group">
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{{ asset('img/marth.jpg') }}" class="card-img-top" style"max-width:70%;height:auto;">
+          <div class="card-body">
+            <h3 class="card-title">Smash 4</h3>
+            <p class="lead">Character-focused guides.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://drive.google.com/open?id=0B4vWYBgV8fPPdkxGV3JabXpZU2M" class="btn btn-secondary">Read on
+              Google Docs</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card">
+          <img src="{{ asset('img/zedyas.png') }}" class="card-img-top" style"max-width:70%;height:auto;">
+          <div class="card-body">
+            <h3 class="card-title">League of Legends</h3>
+            <p class="lead">Character and macro-focused guides, as well as essays on phenomena of the game.</p>
+          </div>
+          <div class="card-footer text-center">
+            <a href="https://drive.google.com/open?id=0B4vWYBgV8fPPMGNIa09kNWtXOTQ" class="btn btn-secondary">Read on
+              Google Docs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

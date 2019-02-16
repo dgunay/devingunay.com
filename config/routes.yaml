@@ -8,3 +8,7 @@
 frontPage:
   path: /
   controller: App\Controller\FrontPageController::frontPage
+
+hobbies:
+  path: /hobbies
+  controller: App\Controller\HobbiesController::hobbies
