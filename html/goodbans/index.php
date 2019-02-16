@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <?php
-	// ini_set('display_errors', 1);
 	require_once(__DIR__ . '/../../config.php');
-	require_once($GLOBALS['project_root'] . '/goodbans/vendor/autoload.php');
-	use GoodBans\GoodBansView;
-	use GoodBans\BanRanker;
+	require_once($GLOBALS['project_root'] . '/vendor/autoload.php');
+	use GoodBans\ChampionsDatabase;
+	use GoodBans\OpGG;
+	use GoodBans\RiotChampions;
+	use GoodBans\View;
+ 	use GoodBans\Lolalytics;
 ?>	
 <head>
 	<!-- required meta tags -->
@@ -16,7 +18,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M"
 		crossorigin="anonymous">
 	<!-- Other -->
-	<title>Best Bans</title>
+	<title>Good Bans</title>
 </head>
 
 <body>
@@ -43,11 +45,14 @@
 
 	<div class="container">
 		<?php
-			$ranker = new BanRanker(
-				new \PDO('sqlite:' . $GLOBALS['project_root'] . '/goodbans/champions.db')
+			$db = new ChampionsDatabase(
+				new \PDO('sqlite:' . $GLOBALS['project_root'] . '/champions.db'),
+				// new OpGG(),
+				new Lolalytics(),
+				new RiotChampions()			
 			);
-			$bans = $ranker->best_bans();
-			$view = new GoodBansView($bans);
+			$bans = $db->topBans();
+			$view = new View($bans);
 			echo $view->render();
 		?>
 	</div>

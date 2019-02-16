@@ -1,4 +1,5 @@
 # Folders for personal data/assets
+# Site assets
 html/side_projects
 html/blog/posts/*.md
 html/blog/tmp
@@ -10,11 +11,9 @@ html/img
 
 # composer
 /vendor/
+
 # Site configuration stuff
 sitemap.xml
 config.php
 test.php
-<<<<<<< HEAD
-html/img
-/vendor/
 *.db

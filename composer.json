@@ -1,0 +1,14 @@
+{
+    "name": "dgunay/devingunay.com",
+    "description": "My personal website.",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Devin Gunay",
+            "email": "devingunay@gmail.com"
+        }
+    ],
+    "require": {
+      "dgunay/good-bans": "dev-master"
+    }
+}
