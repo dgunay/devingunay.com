@@ -1,19 +1,9 @@
-# Folders for personal data/assets
-# Site assets
-html/side_projects
-html/blog/posts/*.md
-html/blog/tmp
-html/blog/*.json
-html/cv_site
-html/projects
-html/img
-*.md
 
-# composer
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/public/bundles/
+/var/
 /vendor/
-
-# Site configuration stuff
-sitemap.xml
-config.php
-test.php
-*.db
+###< symfony/framework-bundle ###
