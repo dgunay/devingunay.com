@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+{% block title %}
+  About Devin
+{% endblock %}
+{% block body %}
+  {{ parent() }}
+  <div class="jumbotron">
+    <div class="container">
+      <h1 class="display-3">
+        About
+      </h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h1>The Man</h1>
+        <p>Devin Gunay is a software engineer. Former PHP developer for
+          <a href="http://feedonomics.com/">Feedonomics.</a>
+          In his spare time he likes to code, play jazz piano, and play videogames, particularly Smash 4 and League of Legends.
+        </p>
+      </div>
+      <div class="col-lg-6">
+        <h1>The Stack</h1>
+        <p>Front-end made with the Bootstrap 4 framework. Back-end running Symfony 4.2.</p>
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -8,12 +8,15 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       {# TODO: controller stuff #}
-      {# Foreach link, li.nav-item active if link !== currentPage #}
-      <li class="nav-item active">
-        <a class="nav-link" href="">
-          {# link #}
+      {% for link in navBarLinks %}
+      <li class="nav-item">
+        <a class="nav-link" href="{{ link }}">
+          {{ link }}
         </a>
       </li>
+        
+      {% endfor %}
+      {# TODO: Foreach link, li.nav-item active if link !== currentPage #}
     </ul>
     
     <small class="text-muted">Site under construction</small>

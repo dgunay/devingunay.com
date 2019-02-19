@@ -13,6 +13,10 @@ hobbies:
   path: /hobbies
   controller: App\Controller\HobbiesController::hobbies
 
+about:
+  path: /about
+  controller: App\Controller\AboutController::about
+
 blog:
   path: /blog
   controller: App\Controller\BlogController::blogFront
