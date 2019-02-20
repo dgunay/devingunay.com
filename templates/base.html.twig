@@ -17,8 +17,14 @@
   {% block body %}
   {% block navbar %}
   {# Calls the NavBarController to dynamically deactivate the current link #}
-  {# FIXME: can I pass the route as a parameter? It currently comes with a _fragment bit that is really unhelpful #}
-  {{ render(controller('App\\Controller\\NavBarController::renderWithCurrentPageLinkDeactivated')) }}  
+  {{ 
+    render(
+      controller(
+        'App\\Controller\\NavBarController::renderWithCurrentPageLinkDeactivated',
+        { 'originalRequest': app.request }
+      )
+    ) 
+  }}
   {% endblock %}
   {% endblock %}
 
