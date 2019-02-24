@@ -17,11 +17,11 @@ about:
   path: /about
   controller: App\Controller\AboutController::about
 
-blog:
+blogFront:
   path: /blog
-  controller: App\Controller\BlogController::blogFront
+  controller: App\Controller\Blog\BlogRecentController::blogFront
 
 # TODO: make this wildcarded or something so it can load any post
-# blogPost:
-#   path: /blog{$asdfklsdfjlk}
-#   controller: App\Controller\BlogController::blogPost
+blogPost:
+  path: /blog{$asdfklsdfjlk}
+  controller: App\Controller\Blog\BlogController::blogPost
