@@ -35,19 +35,22 @@ abstract class BlogController extends AbstractController
     $this->parsedown = new Parsedown();
   }
 
-  // protected function render(Post $p): string
-  // {
-  //   // parse post Markdown to HTML
-  //   $html = $this->parsedown->text($p->markdown());
+  /**
+   * Returns the most recent posts in the archive.
+   *
+   * @param integer $n
+   * @return Post[]
+   */
+  protected function mostRecentPosts(int $n = 5) : array {
+    $this->archive->loadFlatArchive();
+    $most_recent_posts = array_slice(
+      $this->archive->getFlatArchive(),
+      0,
+      $n,
+      true // preserve keys for timestamps
+    );
 
-  //   // extra styling
-  //   $html = preg_replace(
-  //     '/<blockquote>/',
-  //     '<blockquote class="blockquote">',
-  //     $html
-  //   );
-
-  //   return $html;
-  // }
+    return $most_recent_posts;
+  }
 }
 

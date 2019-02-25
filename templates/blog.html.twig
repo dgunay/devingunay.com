@@ -4,6 +4,7 @@
 
 {% block stylesheets %}
 {{ parent() }}
+<!-- Styles blockquotes in a more pleasing way -->
 <style>
   blockquote {
     border-left: 5px solid #ccc;
@@ -21,53 +22,27 @@
 {% block body %}
 {{ parent() }}
 
-<!-- Top row -->
+<!-- Top row banner -->
 <div class="container" style="margin-bottom: 40px;margin-top: 40px;">
   <h1 class="display-3">Devin's Blog</h1>
 </div>
 
-<!-- Main -->
+<!-- Main container -->
 <div class="container">
   <div class="row">
-    <!-- Content -->
-    <div class="col-sm-8">
+    <!-- Post content -->
+    <div class="col-md-9">
       {% for post in posts %}
-      <div class="blog-post">
-        <p class="text-muted">
-          {{ post.getPublishTime|date("m/d/Y - g:i a") }}
-        </p>
-
-        <!-- difference of greather than 1 min -->
-        {% if (post.lastModified - post.publishTime)|abs > 59 %}
-        <p class="text-muted">
-          <i>Edited: {{ post.lastModified|date("m/d/Y - g:i a") }}</i>
-        </p>
-        {% endif %}
-
-        <!-- echo post tags with links to search -->
-        <p>
-          {% for tag in post.tags %}
-          <a class="rounded text-white bg-secondary" href="/blog/search.php?tags[]={{ tag|replace({'#': ''}) }}"
-            style="text-decoration:none;">
-            {{ tag }}
-          </a>
-          {% endfor %}
-        </p>
-
-        <!-- Render markdown to HTML -->
-        {% autoescape false %}
-        {{ post.text|md2html }}
-
-        {% endautoescape %}
-
-      </div>
+      <!-- Render the post -->
+      {% include "post.html.twig" with { "post" : post } %}
       <hr />
       {% endfor %}
     </div>
+
     <!-- Side bar -->
-    <div class="col-sm-3">
+    <div class="col-md-3">
       {% block sidebar %}
-      {{ render(controller('App\\Controller\\SideBarController::renderSideBar')) }}
+      {{ render(controller('App\\Controller\\Blog\\SideBarController::renderSideBar')) }}
       {% endblock %}
     </div>
   </div>
