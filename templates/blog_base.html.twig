@@ -1,0 +1,67 @@
+{% extends "base.html.twig" %}
+
+{% block title %} Devin's Blog {% endblock %}
+
+{% block stylesheets %}
+{{ parent() }}
+<!-- Styles blockquotes in a more pleasing way -->
+<style>
+  blockquote {
+    border-left: 5px solid #ccc;
+    background: #f9f9f9;
+  }
+
+  blockquote>p {
+    margin: 1.5em 10px;
+    padding: 10px;
+  }
+</style>
+
+{% endblock %}
+
+{% block body %}
+{{ parent() }}
+
+<!-- Top row banner -->
+<div class="container" style="margin-bottom: 40px;margin-top: 40px;">
+  <h1 class="display-3">Devin's Blog</h1>
+</div>
+
+<!-- Main container -->
+<div class="container">
+  <div class="row">
+    <!-- Main content area -->
+    <div class="col-md-9 mb-sm-5">
+      {% block content %}
+      {% for post in posts %}
+      <!-- Render the post -->
+      {% include "post.html.twig" with { "post" : post } %}
+      <hr />
+      {% endfor %}
+
+      <!-- Prev/Next links -->
+      <div class="row justify-content-between">
+        <div class="col-sm-1">
+          {% if prev is defined and prev is not null %}
+          <a href="/blog/post/{{prev.publishTime}}">Previous</a>
+          {% endif %}
+        </div>
+        <!-- <div class="col-sm-1"></div> -->
+        <div class="col-sm-1">
+          {% if next is defined and next is not null %}
+          <a href="/blog/post/{{next.publishTime}}">Next</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endblock content %}
+    </div>
+
+    <!-- Side bar -->
+    <div class="col-md-3">
+      {% block sidebar %}
+      {{ render(controller('App\\Controller\\Blog\\SideBarController::renderSideBar')) }}
+      {% endblock %}
+    </div>
+  </div>
+</div>
+{% endblock %}
