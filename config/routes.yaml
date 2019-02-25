@@ -21,7 +21,7 @@ blogFront:
   path: /blog
   controller: App\Controller\Blog\BlogRecentController::blogFront
 
-# TODO: make this wildcarded or something so it can load any post
 blogPost:
-  path: /blog{$asdfklsdfjlk}
-  controller: App\Controller\Blog\BlogController::blogPost
+  # path: /blog/post?t={$publishTime}
+  path: /blog/post/{publishTime}
+  controller: App\Controller\Blog\BlogRecentController::blogPost
