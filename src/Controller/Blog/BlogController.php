@@ -37,7 +37,12 @@ class BlogController extends AbstractBlogController
     $archive = $this->archive->getFlatArchive();
 
     // Grab our post
-    $the_post = $archive[$publishTime];
+    try {
+      $the_post = $archive[$publishTime];
+    } catch (\ErrorException $e) {
+      // If it isn't there, suggest nearby posts
+      return $this->postNotFound($publishTime, $archive);
+    }
 
     // ...as well as the ones next to it.
     $next = null;
@@ -72,6 +77,26 @@ class BlogController extends AbstractBlogController
         'archive' => $this->archive->getYmdArchive(),
         'year'    => $year,
         'month'   => $month,
+      ]
+    );
+  }
+
+  public function postNotFound(int $time, array $archive)
+  {
+    // Within 7 days
+    $time_difference = 604800;
+    $nearby_posts = array_filter(
+      $archive,
+      function ($timestamp) use ($time_difference, $time) {
+        return abs($timestamp - $time) < $time_difference;
+      },
+      ARRAY_FILTER_USE_KEY
+    );
+
+    return $this->render(
+      'blog_postnotfound.html.twig',
+      [
+        'nearbyPosts' => $nearby_posts,
       ]
     );
   }
