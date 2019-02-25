@@ -1,0 +1,50 @@
+{% extends "blog_base.html.twig" %}
+{% block content %}
+
+<h1>Archive</h1>
+<hr />
+
+<!-- Show posts in year and month -->
+{% if year is not null %}
+{% if month is not null %}
+<!-- Full name of the month + year -->
+<h5>{{ date(year ~ '-' ~ month ~ '-01')|date('F') }} {{ year }}</h5>
+
+<!-- Show all the posts in a month -->
+{% for day, posts in archive[year][month] %}
+{% for post in posts %}
+<li>
+	<a href="/blog/post/{{post.publishTime}}">
+		{{ post.title }}
+	</a>
+</li>
+{% endfor %}
+{% endfor %}
+
+{% else %}
+<h3>{{ year }}</h3>
+<!-- Show months in the year with how many posts they have -->
+{% for month, posts in archive[year]|reverse(true) %}
+<h5>
+	<a href="/blog/archive/{{year}}/{{month}}">
+		{{ date(year ~ '-' ~ month ~ '-01')|date('F') }} ({{ posts|length }})
+	</a>
+</h5>
+{% endfor %}
+
+{% endif %}
+{% else %}
+<!-- Show the entire archive -->
+{% for year, months in archive %}
+<h3>{{ year }}</h3>
+{% for month, posts in months|reverse(true) %}
+<h5>
+	<a href="/blog/archive/{{year}}/{{month}}">
+		{{ date(year ~ '-' ~ month ~ '-01')|date('F') }} ({{ posts|length }})
+	</a>
+</h5>
+{% endfor %}
+{% endfor %}
+{% endif %}
+
+{% endblock content %}

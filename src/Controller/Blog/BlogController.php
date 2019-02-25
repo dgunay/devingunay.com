@@ -2,55 +2,77 @@
 
 namespace App\Controller\Blog;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use BlogBackend\Archive;
-
-use Parsedown;
+use App\Controller\Blog\AbstractBlogController;
+use phpDocumentor\Reflection\Types\Null_;
 
 /**
- * Handles data and logic common to all Blog controller classes.
+ * Handles displaying the front page of the blog as well as single blog posts.
  */
-abstract class BlogController extends AbstractController
+class BlogController extends AbstractBlogController
 {
-  // TODO: the .env file doesn't seem to be behaving as I expected so I 
-  // hardcoded these here. They really shouldn't be.
-  protected const PUBLISHED_POSTS_DIR = __DIR__ . '/../../../blog/published';
-  protected const FLAT_ARCHIVE_FILE   = __DIR__ . '/../../../blog/flat_archive.json';
-  protected const YMD_ARCHIVE_FILE    = __DIR__ . '/../../../blog/ymd_archive.json';
-
-  /** @var Archive $archive */
-  protected $archive;
-
-  /** @var Parsedown $parsedown */
-  protected $parsedown;
-
   public function __construct()
   {
-    $this->archive = new Archive(
-      self::PUBLISHED_POSTS_DIR,
-      self::FLAT_ARCHIVE_FILE,
-      self::YMD_ARCHIVE_FILE
-    );
-
-    $this->parsedown = new Parsedown();
+    parent::__construct();
   }
 
-  /**
-   * Returns the most recent posts in the archive.
-   *
-   * @param integer $n
-   * @return Post[]
-   */
-  protected function mostRecentPosts(int $n = 5) : array {
-    $this->archive->loadFlatArchive();
-    $most_recent_posts = array_slice(
-      $this->archive->getFlatArchive(),
-      0,
-      $n,
-      true // preserve keys for timestamps
+  // Renders the 5 most recent posts.
+  public function blogFront()
+  {
+    $most_recent_posts = $this->mostRecentPosts(6);
+    $prev_post = array_pop($most_recent_posts);
+    return $this->render(
+      'blog_showposts.html.twig',
+      [
+        'posts' => $most_recent_posts,
+        'prev'  => $prev_post,
+        'next'  => null
+      ]
     );
+  }
 
-    return $most_recent_posts;
+  // Renders just one blog post.
+  public function blogPost(int $publishTime)
+  {
+    $this->archive->loadFlatArchive();
+    $archive = $this->archive->getFlatArchive();
+
+    // Grab our post
+    $the_post = $archive[$publishTime];
+
+    // ...as well as the ones next to it.
+    $next = null;
+    $prev = null;
+    $archive = array_values($archive);
+    foreach ($archive as $index => $post) {
+      if ($post->getPublishTime() === $publishTime) {
+        $next = $archive[$index - 1] ?? null;
+        $prev = $archive[$index + 1] ?? null;
+        break;
+      }
+    }
+
+    return $this->render(
+      'blog_showposts.html.twig',
+      [
+        'posts' => [$the_post],
+        'next'  => $next,
+        'prev'  => $prev,
+      ]
+    );
+  }
+
+  public function archive(int $year = null, int $month = null)
+  {
+    $this->archive->loadFlatArchive();
+    $this->archive->loadYmdArchive();
+
+    return $this->render(
+      'blog_showarchive.html.twig',
+      [
+        'archive' => $this->archive->getYmdArchive(),
+        'year'    => $year,
+        'month'   => $month,
+      ]
+    );
   }
 }
-

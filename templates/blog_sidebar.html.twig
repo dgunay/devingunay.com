@@ -19,7 +19,7 @@
   {% for year, months in ymdArchive %}
   <!-- Year in bold, no blue/underline link styling -->
   <li>
-    <a style="text-decoration:none; color:#000;" href="/blog/archive?y={{year}}">
+    <a style="text-decoration:none; color:#000;" href="/blog/archive/{{year}}">
       <b>
         {{ year }}
       </b>
@@ -29,7 +29,7 @@
   <!-- Reverse the months, keeping their keys the same (reverse(true)) -->
   {% for month, posts in months|reverse(true) %}
   <li>
-    <a href="/blog/archive?m={{month}}&y={{year}}">
+    <a href="/blog/archive/{{year}}/{{month}}">
       <!-- Format month number to full month name -->
       {{ date(year ~ '-' ~ month ~ '-01')|date('F') }}
     </a>

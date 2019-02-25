@@ -2,14 +2,15 @@
 
 namespace App\Controller\Blog;
 
-use App\Controller\Blog\BlogController;
+use App\Controller\Blog\AbstractBlogController;
 
-class SideBarController extends BlogController
+/**
+ * Handles passing posts and the archive to the blog sidebar.
+ */
+class SideBarController extends AbstractBlogController
 {
   public function renderSideBar()
   {
-    // TODO: grab the 5 most recent blog posts
-    // TODO: grab the monthly archive 
     $this->archive->loadFlatArchive();
     $this->archive->loadYmdArchive();
     

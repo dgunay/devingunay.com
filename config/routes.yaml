@@ -19,9 +19,14 @@ about:
 
 blogFront:
   path: /blog
-  controller: App\Controller\Blog\BlogRecentController::blogFront
+  controller: App\Controller\Blog\BlogController::blogFront
 
 blogPost:
   # path: /blog/post?t={$publishTime}
   path: /blog/post/{publishTime}
-  controller: App\Controller\Blog\BlogRecentController::blogPost
+  controller: App\Controller\Blog\BlogController::blogPost
+
+blogArchive:
+  path: /blog/archive/{year}/{month}
+  controller: App\Controller\Blog\BlogController::archive
+  defaults: { year: null, month: null }

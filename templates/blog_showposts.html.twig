@@ -1,0 +1,24 @@
+{% extends "blog_base.html.twig" %}
+
+{% block content %}
+{% for post in posts %}
+<!-- Render the post -->
+{% include "post.html.twig" with { "post" : post } %}
+<hr />
+{% endfor %}
+
+<!-- Prev/Next links -->
+<div class="row justify-content-between">
+  <div class="col-sm-1">
+    {% if prev is defined and prev is not null %}
+    <a href="/blog/post/{{prev.publishTime}}">Previous</a>
+    {% endif %}
+  </div>
+  <!-- <div class="col-sm-1"></div> -->
+  <div class="col-sm-1">
+    {% if next is defined and next is not null %}
+    <a href="/blog/post/{{next.publishTime}}">Next</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock content %}
