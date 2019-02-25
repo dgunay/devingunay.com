@@ -1,0 +1,34 @@
+<!-- Renders a single blog post -->
+<div class="blog-post">
+  <!-- Show the publish date -->
+  <p class="text-muted">
+    {{ post.getPublishTime|date("m/d/Y - g:i a") }}
+  </p>
+
+  <!-- Show the edit time if edited after more than a minute -->
+  {% if (post.lastModified - post.publishTime)|abs > 59 %}
+  <div class="row justify-content-start">
+    <div class="col">
+      <p class="text-muted">
+        <i>Edited: {{ post.lastModified|date("m/d/Y - g:i a") }}</i>
+      </p>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- row of post tags with links to search -->
+  <p>
+    {% for tag in post.tags %}
+    <a class="rounded text-white bg-secondary" href="/blog/search.php?tags[]={{ tag|replace({'#': ''}) }}">
+      {{ tag }}
+    </a>
+    &nbsp; {# Helps space out the tag links #}
+    {% endfor %}
+  </p>
+
+  <!-- Render markdown to HTML -->
+  {% autoescape false %}
+  {{ post.text|md2html }}
+  {% endautoescape %}
+
+</div>
