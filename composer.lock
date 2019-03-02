@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0c40ad35486b8c07cf6477957cd69d7d",
+    "content-hash": "b3d6e29a06d3232d6cf402b3f02a93ad",
     "packages": [
         {
             "name": "dgunay/flat-file-blog",
-            "version": "dev-rc-1.0",
+            "version": "v1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/dgunay/flat-file-blog.git",
-                "reference": "3a19f2ce623a1f91c6982381e977a1e3886ddc34"
+                "reference": "efdb92095cde45d1a1ce9a4a5433e02f82375f74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dgunay/flat-file-blog/zipball/3a19f2ce623a1f91c6982381e977a1e3886ddc34",
-                "reference": "3a19f2ce623a1f91c6982381e977a1e3886ddc34",
+                "url": "https://api.github.com/repos/dgunay/flat-file-blog/zipball/efdb92095cde45d1a1ce9a4a5433e02f82375f74",
+                "reference": "efdb92095cde45d1a1ce9a4a5433e02f82375f74",
                 "shasum": ""
             },
             "require": {
@@ -38,6 +38,9 @@
             "scripts": {
                 "test": [
                     "phpunit test/"
+                ],
+                "typecheck": [
+                    "psalm src/"
                 ]
             },
             "license": [
@@ -51,10 +54,10 @@
             ],
             "description": "A flat-file blog backend.",
             "support": {
-                "source": "https://github.com/dgunay/flat-file-blog/tree/rc-1.0",
+                "source": "https://github.com/dgunay/flat-file-blog/tree/v1.0.0",
                 "issues": "https://github.com/dgunay/flat-file-blog/issues"
             },
-            "time": "2019-03-02T06:07:09+00:00"
+            "time": "2019-03-02T09:35:50+00:00"
         },
         {
             "name": "dgunay/good-bans",
@@ -6688,9 +6691,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "dgunay/flat-file-blog": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
