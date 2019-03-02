@@ -9,31 +9,33 @@ use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
+use BlogBackend\PersistentArchive;
 class GenerateArchivesCommand extends Command
 {
   protected static $defaultName = 'app:generate_archives';
 
   protected function configure()
   {
-    $this
-      ->setDescription('Add a short description for your command')
-      ->addArgument('arg1', InputArgument::OPTIONAL, 'Argument description')
-      ->addOption('option1', null, InputOption::VALUE_NONE, 'Option description');
+    $this->setDescription('Generates JSON archive files for the blog.');
   }
 
   protected function execute(InputInterface $input, OutputInterface $output)
   {
     $io = new SymfonyStyle($input, $output);
-    $arg1 = $input->getArgument('arg1');
 
-    if ($arg1) {
-      $io->note(sprintf('You passed an argument: %s', $arg1));
-    }
+    // FIXME: configurable/env values!!!
+    $archive = new PersistentArchive(
+      __DIR__ . '/../../blog/published',
+      __DIR__ . '/../../blog/flat_archive.json',
+      __DIR__ . '/../../blog/ymd_archive.json'
+    );
+    
+    $archive->generateFlatArchive();
+    $archive->loadFlatArchive();
+    $archive->generateYmdArchive();
 
-    if ($input->getOption('option1')) {
-      // ...
-    }
-
-    $io->success('You have a new command! Now make it your own! Pass --help to see your options.');
+    $io->success(
+      'Archive files successfully generated at ' . date(\DateTime::ATOM)
+    );
   }
 }
