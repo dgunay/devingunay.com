@@ -1,0 +1,19 @@
+{% extends "blog_base.html.twig" %}
+
+{% block content %}
+<h1>Post Not Found</h1>
+<hr/>
+<p>Sorry, the post you were looking for could not be found.</p>
+
+{% if nearbyPosts is not empty %}
+<p>Were you perhaps looking for posts at these times?:</p>
+<ul>
+	{% for post in nearbyPosts %}
+	<li>
+		<b>{{ post.publishTime|date("m/d/Y - g:i a") }}: </b>
+		<a href="/blog/post/{{post.publishTime}}">{{ post.title }}</a>
+	</li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endblock content %}

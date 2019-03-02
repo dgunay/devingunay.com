@@ -1,0 +1,36 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+# navBar:
+#   path: /navbar
+#   controller: App\Controller\NavBarController::navBar
+
+frontPage:
+  path: /
+  controller: App\Controller\FrontPageController::frontPage
+
+goodBans:
+  path: /goodbans
+  controller: App\Controller\GoodBansController::goodBans
+  
+hobbies:
+  path: /hobbies
+  controller: App\Controller\HobbiesController::hobbies
+
+about:
+  path: /about
+  controller: App\Controller\AboutController::about
+
+blogFront:
+  path: /blog
+  controller: App\Controller\Blog\BlogController::blogFront
+
+blogPost:
+  # path: /blog/post?t={$publishTime}
+  path: /blog/post/{publishTime}
+  controller: App\Controller\Blog\BlogController::blogPost
+
+blogArchive:
+  path: /blog/archive/{year}/{month}
+  controller: App\Controller\Blog\BlogController::archive
+  defaults: { year: null, month: null }

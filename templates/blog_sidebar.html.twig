@@ -1,0 +1,47 @@
+<!-- Links to the 5 most recent posts -->
+<div class="p-3 border border-top-0 border-bottom-0 rounded">
+  <h4 class="display-5">Recent</h4>
+  <ul class="list-unstyled">
+    {% for post in posts %}
+    <li>
+      <!-- link to post -->
+      <a href="/blog/post/{{post.publishTime}}">
+        {{ post.title }}
+      </a>
+
+      {% if not loop.last %} <hr/> {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+<!-- Monthly archives -->
+<div class="p-3 border border-top-0 border-bottom-0 rounded">
+  <h4 class="display-5">
+    <a style="text-decoration:none; color:#000;" href="/blog/archive">
+      Archive
+    </a>
+  </h4>
+  <ul class="list-unstyled">
+    {% for year, months in ymdArchive %}
+    <!-- Year in bold, no blue/underline link styling -->
+    <li>
+      <a style="text-decoration:none; color:#000;" href="/blog/archive/{{year}}">
+        <b>
+          {{ year }}
+        </b>
+      </a>
+    </li>
+
+    <!-- Reverse the months, keeping their keys the same (reverse(true)) -->
+    {% for month, posts in months|reverse(true) %}
+    <li>
+      <a href="/blog/archive/{{year}}/{{month}}">
+        <!-- Format month number to full month name -->
+        {{ date(year ~ '-' ~ month ~ '-01')|date('F') }}
+      </a>
+    </li>
+    {% endfor %}
+    {% endfor %}
+  </ul>
+</div>

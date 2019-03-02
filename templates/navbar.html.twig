@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Devin Günay</a>
+  <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul
+      class="navbar-nav mr-auto">
+      {% for displayName, link in navBarLinks %}
+        <li class="nav-item {% if currentPage == link %} active {% endif %}">
+          <a class="nav-link" href="{{ link }}">
+            {{ displayName }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+    {# TODO: a search bar will go here eventually #}
+    <small class="text-muted">Site under construction</small>
+  </div>
+</nav>
