@@ -3,7 +3,7 @@
 namespace App\Controller\Blog;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use BlogBackend\Archive;
+use BlogBackend\PersistentArchive;
 
 use Parsedown;
 
@@ -18,7 +18,7 @@ abstract class AbstractBlogController extends AbstractController
   protected const FLAT_ARCHIVE_FILE   = __DIR__ . '/../../../blog/flat_archive.json';
   protected const YMD_ARCHIVE_FILE    = __DIR__ . '/../../../blog/ymd_archive.json';
 
-  /** @var Archive $archive */
+  /** @var PersistentArchive $archive */
   protected $archive;
 
   /** @var Parsedown $parsedown */
@@ -26,7 +26,7 @@ abstract class AbstractBlogController extends AbstractController
 
   public function __construct()
   {
-    $this->archive = new Archive(
+    $this->archive = new PersistentArchive(
       self::PUBLISHED_POSTS_DIR,
       self::FLAT_ARCHIVE_FILE,
       self::YMD_ARCHIVE_FILE

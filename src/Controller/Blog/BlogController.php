@@ -3,7 +3,6 @@
 namespace App\Controller\Blog;
 
 use App\Controller\Blog\AbstractBlogController;
-use phpDocumentor\Reflection\Types\Null_;
 
 /**
  * Handles displaying the front page of the blog as well as single blog posts.

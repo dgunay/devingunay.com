@@ -11,7 +11,7 @@
 <h5>{{ date(year ~ '-' ~ month ~ '-01')|date('F') }} {{ year }}</h5>
 
 <!-- Show all the posts in a month -->
-{% for day, posts in archive[year][month] %}
+{% for day, posts in archive[year][month]|reverse %}
 {% for post in posts %}
 <li>
 	<a href="/blog/post/{{post.publishTime}}">
