@@ -9,6 +9,10 @@ frontPage:
   path: /
   controller: App\Controller\FrontPageController::frontPage
 
+goodBans:
+  path: /goodbans
+  controller: App\Controller\GoodBansController::goodBans
+  
 hobbies:
   path: /hobbies
   controller: App\Controller\HobbiesController::hobbies
