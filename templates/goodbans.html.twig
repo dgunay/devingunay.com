@@ -1,6 +1,9 @@
 {% extends "base.html.twig" %}
-
 {% block body %}
+{% block navbar %}
+  {{ parent() }}
+{% endblock %}
+
 <div class="jumbotron">
   <div class="container">
     <div class="row">
@@ -19,6 +22,52 @@
 </div>
 
 <div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-md-8">
+      <h2 class="display-2">
+        Patch {{bans.getPatch}} Top Bans
+      </h2>
+    </div>
+  </div>
+
+  {% for elo, topBans in bans.getTopBans %}
+  {# Display the elo #}
+  <div class="row justify-content-md-left" style="margin-top:20px">
+    <h4 class="display-4">
+      {{ elo|lower|capitalize }}
+    </h4>
+  </div>
+  <hr class="hr-primary" style="background-color:black;">
+
+  {# Display the champions #}
+  <div class="row">
+    {% for champion in topBans %}
+    <div class="col-sm">
+
+      <div class="card">
+        <img src="{{champion['img']}}" class="card-img-top" />
+        <div class="card-header">
+          <h5> #{{loop.index}}: {{champion.name}} </h5>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            Winrate: {{champion.winRate * 100}}%
+          </li>
+          <li class="list-group-item">
+            Adj. Pickrate: {{(champion.adjustedPickRate * 100)|round(2, 'common')}}%
+          </li>
+          <li class="list-group-item list-group-item-success">
+            <b>
+              Ban value: {{(champion.banValue * 10000)|round(2, 'common')}}
+            </b>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+    {% endfor %}
+  </div>
+  {% endfor %}
 </div>
 
 {% endblock body %}
