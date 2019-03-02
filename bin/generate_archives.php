@@ -5,9 +5,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use BlogBackend\Archive;
+use BlogBackend\PersistentArchive;
 
-$archive = new Archive(
+$archive = new PersistentArchive(
 	__DIR__ . '/../blog/published',
 	__DIR__ . '/../blog/flat_archive.json',
 	__DIR__ . '/../blog/ymd_archive.json'
