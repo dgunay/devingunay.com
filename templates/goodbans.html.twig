@@ -1,7 +1,7 @@
 {% extends "base.html.twig" %}
 {% block body %}
 {% block navbar %}
-  {{ parent() }}
+{{ parent() }}
 {% endblock %}
 
 <div class="jumbotron">
@@ -15,7 +15,15 @@
       <div class="col-md">
         <p class="lead">A basic reimplementation of
           <a href="http://BestBans.com">BestBans.com</a>,
-          which has been out of service since January 2017.</p>
+          which has been out of service since January 2017.
+        </p>
+        <h5>Terminology:</h5>
+        <ul>
+          <li><b>Winrate</b>: percentage of the time the champion wins the match.</li>
+          <li><b>Adjusted Pickrate</b>: Pickrate weighted by banrate.</li>
+          <li><b>Ban Value</b>: How banworthy GoodBans rates the champion.</li>
+        </ul>
+
       </div>
     </div>
   </div>
