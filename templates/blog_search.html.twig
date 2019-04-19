@@ -1,0 +1,18 @@
+{% extends "blog_base.html.twig" %}
+
+{% block content %}
+
+{% if posts %}
+<ul>
+  {% for post in posts %}
+  <li><b>{{ post.publishTime|date("m/d/Y")}}: </b>
+    <a href="/blog/post/{{post.publishTime}}">{{post.title}}</a>
+  </li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No posts found.</p>
+{% endif %}
+
+
+{% endblock content %}

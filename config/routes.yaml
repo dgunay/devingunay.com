@@ -34,3 +34,7 @@ blogArchive:
   path: /blog/archive/{year}/{month}
   controller: App\Controller\Blog\BlogController::archive
   defaults: { year: null, month: null }
+
+blogSearch:
+  path: /blog/search
+  controller: App\Controller\Blog\BlogController::search

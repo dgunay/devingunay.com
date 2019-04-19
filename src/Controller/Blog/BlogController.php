@@ -3,6 +3,8 @@
 namespace App\Controller\Blog;
 
 use App\Controller\Blog\AbstractBlogController;
+use Symfony\Component\HttpFoundation\Request;
+use BlogBackend\Post;
 
 /**
  * Handles displaying the front page of the blog as well as single blog posts.
@@ -98,5 +100,40 @@ class BlogController extends AbstractBlogController
         'nearbyPosts' => $nearby_posts,
       ]
     );
+  }
+
+  public function search(Request $req)
+  {
+    $this->archive->loadFlatArchive();
+    $archive = $this->archive->getFlatArchive();
+
+    // Search linearly for matching tags
+    $tags = $req->query->get('tags');
+    $relevant_posts = [];
+    foreach ($archive as $post) {
+      if (self::postMatchesTags($post, $tags)) {
+        $relevant_posts[] = $post;
+      }
+    }
+
+    return $this->render(
+      'blog_search.html.twig',
+      [
+        'posts' => $relevant_posts
+      ]
+    );
+  }
+
+  public static function postMatchesTags(Post $p, array $search_tags): bool
+  {
+    $remove_hash_symbol = function (string $s) {
+      return ltrim($s, '#');
+    };
+
+    // Remove hashes from the left
+    $post_tags   = array_map($remove_hash_symbol, $p->getTags());
+    $search_tags = array_map($remove_hash_symbol, $search_tags);
+
+    return !empty(array_intersect($post_tags, $search_tags));
   }
 }
