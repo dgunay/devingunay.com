@@ -1,3 +1,12 @@
+{% if server %}
+{% set badge = "success" %}
+{% set status = "Up" %}
+{% else %}
+{% set badge = "danger" %}
+{% set status = "Down" %}
+{% endif %}
 
-
-<span class="badge badge-{{}}"
+<span class="navbar-text">
+  Minecraft server status:
+  <span class="badge badge-{{badge}}">{{status}}</span>
+</span>
