@@ -12,6 +12,8 @@ use Symfony\Component\Console\Style\SymfonyStyle;
 use GoodBans\ChampionsDatabase;
 use GoodBans\RiotChampions;
 use GoodBans\Lolalytics;
+use Symfony\Component\Filesystem\Filesystem;
+
 class RefreshGoodbansCommand extends Command
 {
   protected static $defaultName = 'app:refresh_goodbans';
@@ -25,9 +27,15 @@ class RefreshGoodbansCommand extends Command
   {
     $io = new SymfonyStyle($input, $output);
     
+    $fs = new Filesystem();
+    $goodbans_db = __DIR__ . '/../../var/db/goodbans.sqlite';
+    if (!$fs->exists($goodbans_db)) {
+      $fs->touch($goodbans_db);
+    }
+
     // FIXME: configureable .env variables
     $db = new ChampionsDatabase(
-      new \PDO('sqlite:'.__DIR__.'/../../var/db/goodbans.sqlite'),
+      new \PDO("sqlite:$goodbans_db"),
       //new OpGG(),
       new Lolalytics(),
       new RiotChampions()
