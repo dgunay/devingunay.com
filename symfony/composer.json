@@ -1,12 +1,4 @@
 {
-    "name": "dgunay/devingunay.com",
-    "description": "My personal website.",
-    "authors": [
-        {
-            "name": "Devin Gunay",
-            "email": "devingunay@gmail.com"
-        }
-    ],
     "type": "project",
     "license": "proprietary",
     "repositories": [
@@ -16,42 +8,26 @@
         }
     ],
     "require": {
-        "php": "^7.1.3",
-        "ext-ctype": "*",
-        "ext-iconv": "*",
-        "dgunay/flat-file-blog": "v1.0.0",
+        "php": ">=7.2.5",
+
+        "dgunay/flat-file-blog": "v1.0.1",
         "dgunay/good-bans": "v1.0.1",
         "erusev/parsedown": "1.6.0",
-        "sensio/framework-extra-bundle": "^5.1",
-        "symfony/apache-pack": "^1.0",
-        "symfony/asset": "4.4.15",
-        "symfony/console": "4.4.15",
-        "symfony/dotenv": "4.4.15",
-        "symfony/expression-language": "4.4.15",
-        "symfony/flex": "^1.9.*",
-        "symfony/form": "4.4.15",
-        "symfony/framework-bundle": "4.4.15",
-        "symfony/monolog-bundle": "^3.1",
-        "symfony/orm-pack": "*",
-        "symfony/process": "4.4.15",
-        "symfony/security-bundle": "4.4.15",
-        "symfony/serializer-pack": "*",
-        "symfony/swiftmailer-bundle": "^3.1",
-        "symfony/translation": "4.4.15",
-        "symfony/twig-bundle": "4.4.15",
-        "symfony/validator": "4.4.15",
-        "symfony/web-link": "4.4.15",
-        "symfony/yaml": "4.4.15"
+
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "symfony/asset": "5.1.*",
+        "symfony/console": "5.1.*",
+        "symfony/dotenv": "5.1.*",
+        "symfony/flex": "^1.3.1",
+        "symfony/framework-bundle": "5.1.*",
+        "symfony/twig-bundle": "5.1.*",
+        "symfony/yaml": "5.1.*"
     },
     "require-dev": {
-        "symfony/debug-pack": "*",
-        "symfony/maker-bundle": "^1.0",
-        "symfony/phpunit-bridge": "4.2.*",
-        "symfony/profiler-pack": "*",
-        "symfony/test-pack": "*",
-        "symfony/web-server-bundle": "4.2.*"
     },
     "config": {
+        "optimize-autoloader": true,
         "preferred-install": {
             "*": "dist"
         },
@@ -71,6 +47,7 @@
         "paragonie/random_compat": "2.*",
         "symfony/polyfill-ctype": "*",
         "symfony/polyfill-iconv": "*",
+        "symfony/polyfill-php72": "*",
         "symfony/polyfill-php71": "*",
         "symfony/polyfill-php70": "*",
         "symfony/polyfill-php56": "*"
@@ -93,7 +70,7 @@
     "extra": {
         "symfony": {
             "allow-contrib": false,
-            "require": "4.2.*"
+            "require": "5.1.*"
         }
     }
 }
