@@ -1,0 +1,23 @@
+# Deploys PHP with FastCGI Process Manager on Alpine
+FROM php:fpm-alpine
+
+RUN apk update
+
+# TODO: ensure my deps are in here
+RUN apk add git zlib-dev libxml2-dev libzip-dev bash
+RUN docker-php-ext-install zip pdo
+
+# Install composer
+RUN curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer
+COPY symfony/ /var/www/symfony
+
+# Copy .env files
+COPY build/symfony /var/www/symfony
+
+# Install symfony cli
+RUN wget https://get.symfony.com/cli/installer -O - | bash
+RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
+
+WORKDIR /var/www/symfony
+
+RUN composer install

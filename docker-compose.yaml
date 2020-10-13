@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+    nginx:
+        build:
+            context: . # TODO: make this different?
+            dockerfile: Dockerfile-nginx
+        volumes:
+            - ./symfony/:/var/www/symfony/
+        # Map inbound port 8001 to 80 (HTTP)
+        ports:
+            - 80:80
+        networks:
+            - symfony
+        depends_on: 
+            - php
+    php:
+        build:
+            context: .
+            dockerfile: Dockerfile-php
+        environment:
+            APP_ENV: dev # TODO: change this in prod
+        volumes:
+            - ./symfony/:/var/www/symfony/
+        networks:
+            - symfony
+
+networks:
+    symfony:

@@ -1,0 +1,6 @@
+blog/
+vendor/
+.env
+.env.local
+/public/bundles
+/var/
