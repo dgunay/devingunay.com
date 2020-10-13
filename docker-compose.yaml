@@ -9,15 +9,15 @@ services:
             - ./symfony/:/var/www/symfony/
         # Map inbound port 8001 to 80 (HTTP)
         ports:
-            - 8001:80
+            - 80:80
         networks:
             - symfony
+        depends_on: 
+            - php
     php:
         build:
             context: .
             dockerfile: Dockerfile-php
-        ports:
-            - 8000:8000
         environment:
             APP_ENV: dev # TODO: change this in prod
         volumes:
