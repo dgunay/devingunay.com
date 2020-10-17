@@ -1,0 +1,26 @@
+# If you intened to deploy Kubernetes in an air-gapped environment,
+# please consult the documentation on how to configure custom RKE images.
+nodes:
+- address: localhost
+  role: [worker, etcd, controlplane]
+  user: vagrant
+  port: 2222
+  labels:
+    app: ingress
+
+etcd:
+    snapshot: true
+    creation: 6h
+    retention: 24h
+
+# Required for external TLS termination with
+# ingress-nginx v0.22+
+ingress:
+  provider: nginx
+  node_selector:
+    app: ingress
+  # options:
+  #   use-forwarded-headers: "true"  
+
+private_registries:
+  - url: localhost:5000

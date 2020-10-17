@@ -9,7 +9,7 @@ services:
             - ./symfony/:/var/www/symfony/
         # Map inbound port 8001 to 80 (HTTP)
         ports:
-            - 80:80
+            - 30080:80
         networks:
             - symfony
         depends_on: 
