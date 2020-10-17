@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devingunay.com
+  labels:
+    app: devingunay.com
+spec:
+  selector:
+    matchLabels:
+      app: devingunay.com
+  template:
+    metadata:
+      labels:
+        app: devingunay.com
+    spec:
+      # initContainers:
+      # - name: nginx-init
+      #   image: nginx
+      #   volumeMounts:
+      #     - mountPath: /var/www/symfony
+      #       name: symfony-code
+      volumes:
+      - name: symfony-code
+        emptyDir: {}
+      # TODO: might need this
+      # - name: symfony-nginx-config
+      #   configMap:
+      #     name: symfony-nginx-config
+      containers:
+      # The container our nginx server is in
+      - name: nginx
+        image: nginx
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        # let nginx see our symfony app files
+        volumeMounts:
+          - mountPath: /var/www/symfony
+            name: symfony-code
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          timeoutSeconds: 1
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          timeoutSeconds: 1
+
+      # Container with our symfony website and php-fpm
+      - name: php
+        image: php
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9000
+        # TODO: does the symfony container need this?
+        volumeMounts:
+        - mountPath: /var/www/symfony
+          name: symfony-code
+        command:
+        - "/bin/sh"
+        args:
+          - "-c"
+          - "sleep infinity"
