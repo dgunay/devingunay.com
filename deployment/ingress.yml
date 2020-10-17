@@ -1,18 +1,26 @@
-apiVersion: networking.k8s.io/v1
 kind: Ingress
+apiVersion: extensions/v1beta1
 metadata:
-  name: nginx-ingress
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+  name: devingunay.com
+  # annotations:
+  #   certmanager.k8s.io/cluster-issuer:  letsncrypt-prod
 spec:
+  # tls:
+  # - hosts:
+  #   - symfony-demo.k8s.bastianhofmann.de
+  #   secretName: symfony-demo-secret
   rules:
-    - host: hello-world.info
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: web
-                port:
-                  number: 80
+  - host: devingunay.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx
+          servicePort: 80
+  - host: localhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx
+          servicePort: 80
