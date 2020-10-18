@@ -2,14 +2,12 @@ version: '3'
 
 services:
     nginx:
-        build:
-            context: . # TODO: make this different?
-            dockerfile: Dockerfile-nginx
+        image: nginx:latest
         volumes:
+            - ./build/nginx/:/etc/nginx/conf.d/
             - ./symfony/:/var/www/symfony/
-        # Map inbound port 8001 to 80 (HTTP)
         ports:
-            - 30080:80
+            - 80:80
         networks:
             - symfony
         depends_on: 
