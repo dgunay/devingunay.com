@@ -13,30 +13,41 @@ spec:
       labels:
         app: devingunay.com
     spec:
-      # initContainers:
-      # - name: nginx-init
-      #   image: nginx
-      #   volumeMounts:
-      #     - mountPath: /var/www/symfony
-      #       name: symfony-code
       volumes:
+      # Shared directory for the symfony code to live in
       - name: symfony-code
         emptyDir: {}
-      # TODO: might need this
-      # - name: symfony-nginx-config
-      #   configMap:
-      #     name: symfony-nginx-config
+      # Map our nginx-config ConfigMap into a volume
+      - name: nginx-config
+        configMap:
+          name: nginx-config
+      initContainers:
+      # TODO: copy the code over manually because I guess we're just building 
+      # systems with chewing gum and bailing wire.
+      - name: symfony-init
+        image: devingunay/devingunay.com
+        volumeMounts:
+          - mountPath: /volume
+            name: symfony-code
+        command:
+          - /bin/sh
+          - -c
+        args:
+          - "cp -r /var/www/symfony /volume/symfony"
       containers:
       # The container our nginx server is in
       - name: nginx
-        image: nginx
+        image: nginx:latest
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         # let nginx see our symfony app files
         volumeMounts:
-          - mountPath: /var/www/symfony
-            name: symfony-code
+          - name: symfony-code
+            mountPath: /var/www/
+          - name: nginx-config
+            mountPath: /etc/nginx/conf.d/default.conf
+            subPath: default.conf
         livenessProbe:
           httpGet:
             path: /
@@ -49,17 +60,18 @@ spec:
           timeoutSeconds: 1
 
       # Container with our symfony website and php-fpm
-      - name: php
-        image: php
+      - name: symfony
+        image: devingunay/devingunay.com
         imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 9000
+        # ports:
+        # - containerPort: 9000
         # TODO: does the symfony container need this?
         volumeMounts:
-        - mountPath: /var/www/symfony
+        - mountPath: /var/www
           name: symfony-code
+        # Prevents the container from terminating/CrashLoopBackOff
         command:
         - "/bin/sh"
-        args:
-          - "-c"
-          - "sleep infinity"
+        args: 
+        - "-c"
+        - "php-fpm"
