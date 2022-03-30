@@ -12,7 +12,7 @@
 
         "dgunay/flat-file-blog": "v1.0.1",
         "dgunay/good-bans": "v1.0.1",
-        "erusev/parsedown": "1.6.0",
+        "erusev/parsedown": "1.7.2",
 
         "ext-ctype": "*",
         "ext-iconv": "*",
